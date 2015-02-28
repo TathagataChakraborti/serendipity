@@ -88,11 +88,11 @@ def read_input(domainFile, problemFile, flag, discount):
 
     f_problem.close()
         
-    if flag == 'robot':
-        globalVAR.listOfPredicates_robot = copy.deepcopy(varList)
-        globalVAR.listOfActions_robot    = copy.deepcopy(operatorList)
-        globalVAR.initState_robot        = copy.deepcopy(initState)
-        globalVAR.goalState_robot        = copy.deepcopy(goalState)
+    if flag == 'super':
+        globalVAR.listOfPredicates_super = copy.deepcopy(varList)
+        globalVAR.listOfActions_super    = copy.deepcopy(operatorList)
+        globalVAR.initState_super        = copy.deepcopy(initState)
+        globalVAR.goalState_super        = copy.deepcopy(goalState)
     elif flag == 'human':
         globalVAR.listOfPredicates_human = copy.deepcopy(varList)
         globalVAR.listOfActions_human    = copy.deepcopy(operatorList)

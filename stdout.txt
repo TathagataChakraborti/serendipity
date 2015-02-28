@@ -1,63 +1,2498 @@
-INFO     Running search.
-INFO     search input: output
-INFO     search executable: /home/tchakra2/Desktop/FAST-DOWNWARD/src/search/downward-release
-INFO     search arguments: ['--search', 'astar(lmcut())', '--internal-plan-file', 'sas_plan']
-reading input... [t=0s]
-Simplifying transitions... done!
-done reading input! [t=0s]
-building causal graph...done! [t=0s]
-packing state variables...done! [t=0s]
-Variables: 67
-Facts: 134
-Bytes per state: 12
-done initalizing global data [t=0s]
-Conducting best first search with reopening closed nodes, (real) bound = 2147483647
-Initializing landmark cut heuristic...
-f = 12 [1 evaluated, 0 expanded, t=0s, 3060 KB]
-Best heuristic value: 12 [g=0, 1 evaluated, 0 expanded, t=0s, 3060 KB]
-Best heuristic value: 11 [g=1, 2 evaluated, 1 expanded, t=0s, 3060 KB]
-Best heuristic value: 10 [g=2, 3 evaluated, 2 expanded, t=0s, 3060 KB]
-Best heuristic value: 9 [g=3, 5 evaluated, 3 expanded, t=0s, 3060 KB]
-Best heuristic value: 8 [g=4, 7 evaluated, 4 expanded, t=0s, 3060 KB]
-Best heuristic value: 7 [g=5, 8 evaluated, 5 expanded, t=0s, 3060 KB]
-Best heuristic value: 6 [g=6, 11 evaluated, 6 expanded, t=0s, 3060 KB]
-Best heuristic value: 5 [g=7, 14 evaluated, 7 expanded, t=0s, 3060 KB]
-f = 13 [16 evaluated, 8 expanded, t=0s, 3060 KB]
-Best heuristic value: 4 [g=9, 20 evaluated, 10 expanded, t=0s, 3060 KB]
-Best heuristic value: 3 [g=10, 21 evaluated, 11 expanded, t=0s, 3060 KB]
-Best heuristic value: 2 [g=11, 23 evaluated, 12 expanded, t=0s, 3060 KB]
-Best heuristic value: 1 [g=12, 25 evaluated, 13 expanded, t=0s, 3060 KB]
-Best heuristic value: 0 [g=13, 30 evaluated, 14 expanded, t=0s, 3060 KB]
-Solution found!
-Actual search time: 0s [t=0s]
-move_commx_room13_hall8  (1)
-move_reverse_commx_hall8_hall7  (1)
-move_reverse_commx_hall7_hall6  (1)
-move_reverse_commx_hall6_hall5  (1)
-move_reverse_commx_hall5_hall4  (1)
-move_reverse_commx_hall4_hall3  (1)
-move_reverse_commx_hall3_hall2  (1)
-move_reverse_commx_hall2_room2  (1)
-pick_up_medkit_commx_mk1_room2  (1)
-move_commx_room2_hall2  (1)
-move_reverse_commx_hall2_hall1  (1)
-move_reverse_commx_hall1_room1  (1)
-conduct_triage_commx_room1  (1)
-Plan length: 13 step(s).
-Plan cost: 13
-Initial state h value: 12.
-Expanded 15 state(s).
-Reopened 0 state(s).
-Evaluated 30 state(s).
-Evaluations: 30
-Generated 42 state(s).
-Dead ends: 0 state(s).
-Expanded until last jump: 8 state(s).
-Reopened until last jump: 0 state(s).
-Evaluated until last jump: 16 state(s).
-Generated until last jump: 22 state(s).
-Number of registered states: 30
-Search time: 0s
-Total time: 0s
-Solution found.
-Peak memory: 3060 KB
+Generating individual human plan...
+MOVE_COMMX_ROOM13_HALL8
+MOVE_REVERSE_COMMX_HALL8_HALL7
+MOVE_REVERSE_COMMX_HALL7_HALL6
+MOVE_REVERSE_COMMX_HALL6_HALL5
+MOVE_REVERSE_COMMX_HALL5_HALL4
+MOVE_REVERSE_COMMX_HALL4_HALL3
+MOVE_REVERSE_COMMX_HALL3_HALL2
+MOVE_REVERSE_COMMX_HALL2_ROOM2
+PICK_UP_MEDKIT_COMMX_MK1_ROOM2
+MOVE_COMMX_ROOM2_HALL2
+MOVE_REVERSE_COMMX_HALL2_HALL1
+MOVE_REVERSE_COMMX_HALL1_ROOM1
+CONDUCT_TRIAGE_COMMX_ROOM1
+
+Reading domain and problem files...
+
+*** ACTION DESCRIPTIONS for robot ***
+
+Action Name: NOOP
+preconditions: []
+add effects: []
+delete effects: []
+cost: 0.01
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL8
+preconditions: ['AT_MK2_HALL8', 'AT_ROBOT_HALL8']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL8', 'LOC_HAS_MEDKIT_HALL8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM13
+preconditions: ['AT_MK2_ROOM13', 'AT_ROBOT_ROOM13']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM13', 'LOC_HAS_MEDKIT_ROOM13']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM8
+preconditions: ['AT_MK2_ROOM8', 'AT_ROBOT_ROOM8']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM8', 'LOC_HAS_MEDKIT_ROOM8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL8
+preconditions: ['AT_MK1_HALL8', 'AT_ROBOT_HALL8']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL8', 'LOC_HAS_MEDKIT_HALL8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM13
+preconditions: ['AT_MK1_ROOM13', 'AT_ROBOT_ROOM13']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM13', 'LOC_HAS_MEDKIT_ROOM13']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM8
+preconditions: ['AT_MK1_ROOM8', 'AT_ROBOT_ROOM8']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM8', 'LOC_HAS_MEDKIT_ROOM8']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM8_HALL8
+preconditions: ['AT_ROBOT_ROOM8']
+add effects: ['AT_ROBOT_HALL8']
+delete effects: ['AT_ROBOT_ROOM8']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM13_HALL8
+preconditions: ['AT_ROBOT_ROOM13']
+add effects: ['AT_ROBOT_HALL8']
+delete effects: ['AT_ROBOT_ROOM13']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL8
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL8']
+add effects: ['DELIVERED_ROBOT_MK2_HALL8', 'LOC_HAS_MEDKIT_HALL8', 'AT_MK2_HALL8']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM13
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM13']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM13', 'LOC_HAS_MEDKIT_ROOM13', 'AT_MK2_ROOM13']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM8
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM8']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM8', 'LOC_HAS_MEDKIT_ROOM8', 'AT_MK2_ROOM8']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL8
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL8']
+add effects: ['DELIVERED_ROBOT_MK1_HALL8', 'LOC_HAS_MEDKIT_HALL8', 'AT_MK1_HALL8']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM13
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM13']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM13', 'LOC_HAS_MEDKIT_ROOM13', 'AT_MK1_ROOM13']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM8
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM8']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM8', 'LOC_HAS_MEDKIT_ROOM8', 'AT_MK1_ROOM8']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL7
+preconditions: ['AT_MK2_HALL7', 'AT_ROBOT_HALL7']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL7', 'LOC_HAS_MEDKIT_HALL7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM7
+preconditions: ['AT_MK2_ROOM7', 'AT_ROBOT_ROOM7']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM7', 'LOC_HAS_MEDKIT_ROOM7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM6
+preconditions: ['AT_MK2_ROOM6', 'AT_ROBOT_ROOM6']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM6', 'LOC_HAS_MEDKIT_ROOM6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL7
+preconditions: ['AT_MK1_HALL7', 'AT_ROBOT_HALL7']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL7', 'LOC_HAS_MEDKIT_HALL7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM7
+preconditions: ['AT_MK1_ROOM7', 'AT_ROBOT_ROOM7']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM7', 'LOC_HAS_MEDKIT_ROOM7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM6
+preconditions: ['AT_MK1_ROOM6', 'AT_ROBOT_ROOM6']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM6', 'LOC_HAS_MEDKIT_ROOM6']
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL8
+preconditions: ['AT_ROBOT_HALL8']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM13
+preconditions: ['AT_ROBOT_ROOM13']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM8
+preconditions: ['AT_ROBOT_ROOM8']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL8
+preconditions: ['AT_ROBOT_HALL8']
+add effects: ['SEARCHED_HALL8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM13
+preconditions: ['AT_ROBOT_ROOM13']
+add effects: ['SEARCHED_ROOM13']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM8
+preconditions: ['AT_ROBOT_ROOM8']
+add effects: ['SEARCHED_ROOM8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL8_HALL7
+preconditions: ['AT_ROBOT_HALL8']
+add effects: ['AT_ROBOT_HALL7']
+delete effects: ['AT_ROBOT_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL8_ROOM8
+preconditions: ['AT_ROBOT_HALL8']
+add effects: ['AT_ROBOT_ROOM8']
+delete effects: ['AT_ROBOT_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL8_ROOM13
+preconditions: ['AT_ROBOT_HALL8']
+add effects: ['AT_ROBOT_ROOM13']
+delete effects: ['AT_ROBOT_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL7_HALL8
+preconditions: ['AT_ROBOT_HALL7']
+add effects: ['AT_ROBOT_HALL8']
+delete effects: ['AT_ROBOT_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM6_ROOM7
+preconditions: ['AT_ROBOT_ROOM6']
+add effects: ['AT_ROBOT_ROOM7']
+delete effects: ['AT_ROBOT_ROOM6']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM7_HALL7
+preconditions: ['AT_ROBOT_ROOM7']
+add effects: ['AT_ROBOT_HALL7']
+delete effects: ['AT_ROBOT_ROOM7']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL7
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL7']
+add effects: ['DELIVERED_ROBOT_MK2_HALL7', 'LOC_HAS_MEDKIT_HALL7', 'AT_MK2_HALL7']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM7
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM7']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM7', 'LOC_HAS_MEDKIT_ROOM7', 'AT_MK2_ROOM7']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM6
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM6']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM6', 'LOC_HAS_MEDKIT_ROOM6', 'AT_MK2_ROOM6']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL7
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL7']
+add effects: ['DELIVERED_ROBOT_MK1_HALL7', 'LOC_HAS_MEDKIT_HALL7', 'AT_MK1_HALL7']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM7
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM7']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM7', 'LOC_HAS_MEDKIT_ROOM7', 'AT_MK1_ROOM7']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM6
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM6']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM6', 'LOC_HAS_MEDKIT_ROOM6', 'AT_MK1_ROOM6']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL6
+preconditions: ['AT_MK2_HALL6', 'AT_ROBOT_HALL6']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL6', 'LOC_HAS_MEDKIT_HALL6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM10
+preconditions: ['AT_MK2_ROOM10', 'AT_ROBOT_ROOM10']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM10', 'LOC_HAS_MEDKIT_ROOM10']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM9
+preconditions: ['AT_MK2_ROOM9', 'AT_ROBOT_ROOM9']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM9', 'LOC_HAS_MEDKIT_ROOM9']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM2
+preconditions: ['AT_MK2_ROOM2', 'AT_ROBOT_ROOM2']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM2', 'LOC_HAS_MEDKIT_ROOM2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM1
+preconditions: ['AT_MK2_ROOM1', 'AT_ROBOT_ROOM1']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM1', 'LOC_HAS_MEDKIT_ROOM1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL6
+preconditions: ['AT_MK1_HALL6', 'AT_ROBOT_HALL6']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL6', 'LOC_HAS_MEDKIT_HALL6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL5
+preconditions: ['AT_MK1_HALL5', 'AT_ROBOT_HALL5']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL5', 'LOC_HAS_MEDKIT_HALL5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL4
+preconditions: ['AT_MK1_HALL4', 'AT_ROBOT_HALL4']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL4', 'LOC_HAS_MEDKIT_HALL4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL3
+preconditions: ['AT_MK1_HALL3', 'AT_ROBOT_HALL3']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL3', 'LOC_HAS_MEDKIT_HALL3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL2
+preconditions: ['AT_MK1_HALL2', 'AT_ROBOT_HALL2']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL2', 'LOC_HAS_MEDKIT_HALL2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_HALL1
+preconditions: ['AT_MK1_HALL1', 'AT_ROBOT_HALL1']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_HALL1', 'LOC_HAS_MEDKIT_HALL1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM12
+preconditions: ['AT_MK1_ROOM12', 'AT_ROBOT_ROOM12']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM12', 'LOC_HAS_MEDKIT_ROOM12']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM11
+preconditions: ['AT_MK1_ROOM11', 'AT_ROBOT_ROOM11']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM11', 'LOC_HAS_MEDKIT_ROOM11']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM10
+preconditions: ['AT_MK1_ROOM10', 'AT_ROBOT_ROOM10']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM10', 'LOC_HAS_MEDKIT_ROOM10']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM9
+preconditions: ['AT_MK1_ROOM9', 'AT_ROBOT_ROOM9']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM9', 'LOC_HAS_MEDKIT_ROOM9']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM5
+preconditions: ['AT_MK1_ROOM5', 'AT_ROBOT_ROOM5']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM5', 'LOC_HAS_MEDKIT_ROOM5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM4
+preconditions: ['AT_MK1_ROOM4', 'AT_ROBOT_ROOM4']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM4', 'LOC_HAS_MEDKIT_ROOM4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM3
+preconditions: ['AT_MK1_ROOM3', 'AT_ROBOT_ROOM3']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM3', 'LOC_HAS_MEDKIT_ROOM3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM1
+preconditions: ['AT_MK1_ROOM1', 'AT_ROBOT_ROOM1']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM1', 'LOC_HAS_MEDKIT_ROOM1']
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL7
+preconditions: ['AT_ROBOT_HALL7']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM7
+preconditions: ['AT_ROBOT_ROOM7']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM6
+preconditions: ['AT_ROBOT_ROOM6']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL7
+preconditions: ['AT_ROBOT_HALL7']
+add effects: ['SEARCHED_HALL7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM7
+preconditions: ['AT_ROBOT_ROOM7']
+add effects: ['SEARCHED_ROOM7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM6
+preconditions: ['AT_ROBOT_ROOM6']
+add effects: ['SEARCHED_ROOM6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL7_HALL6
+preconditions: ['AT_ROBOT_HALL7']
+add effects: ['AT_ROBOT_HALL6']
+delete effects: ['AT_ROBOT_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_ROOM7_ROOM6
+preconditions: ['AT_ROBOT_ROOM7']
+add effects: ['AT_ROBOT_ROOM6']
+delete effects: ['AT_ROBOT_ROOM7']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL7_ROOM7
+preconditions: ['AT_ROBOT_HALL7']
+add effects: ['AT_ROBOT_ROOM7']
+delete effects: ['AT_ROBOT_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL6_HALL7
+preconditions: ['AT_ROBOT_HALL6']
+add effects: ['AT_ROBOT_HALL7']
+delete effects: ['AT_ROBOT_HALL6']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM1_HALL1
+preconditions: ['AT_ROBOT_ROOM1']
+add effects: ['AT_ROBOT_HALL1']
+delete effects: ['AT_ROBOT_ROOM1']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM2_HALL2
+preconditions: ['AT_ROBOT_ROOM2']
+add effects: ['AT_ROBOT_HALL2']
+delete effects: ['AT_ROBOT_ROOM2']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM9_HALL1
+preconditions: ['AT_ROBOT_ROOM9']
+add effects: ['AT_ROBOT_HALL1']
+delete effects: ['AT_ROBOT_ROOM9']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM10_HALL1
+preconditions: ['AT_ROBOT_ROOM10']
+add effects: ['AT_ROBOT_HALL1']
+delete effects: ['AT_ROBOT_ROOM10']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL6
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL6']
+add effects: ['DELIVERED_ROBOT_MK2_HALL6', 'LOC_HAS_MEDKIT_HALL6', 'AT_MK2_HALL6']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM10
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM10']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM10', 'LOC_HAS_MEDKIT_ROOM10', 'AT_MK2_ROOM10']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM9
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM9']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM9', 'LOC_HAS_MEDKIT_ROOM9', 'AT_MK2_ROOM9']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM2
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM2']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM2', 'LOC_HAS_MEDKIT_ROOM2', 'AT_MK2_ROOM2']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM1
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM1']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM1', 'LOC_HAS_MEDKIT_ROOM1', 'AT_MK2_ROOM1']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL6
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL6']
+add effects: ['DELIVERED_ROBOT_MK1_HALL6', 'LOC_HAS_MEDKIT_HALL6', 'AT_MK1_HALL6']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL5
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL5']
+add effects: ['DELIVERED_ROBOT_MK1_HALL5', 'LOC_HAS_MEDKIT_HALL5', 'AT_MK1_HALL5']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL4
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL4']
+add effects: ['DELIVERED_ROBOT_MK1_HALL4', 'LOC_HAS_MEDKIT_HALL4', 'AT_MK1_HALL4']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL3
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL3']
+add effects: ['DELIVERED_ROBOT_MK1_HALL3', 'LOC_HAS_MEDKIT_HALL3', 'AT_MK1_HALL3']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL2
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL2']
+add effects: ['DELIVERED_ROBOT_MK1_HALL2', 'LOC_HAS_MEDKIT_HALL2', 'AT_MK1_HALL2']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_HALL1
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_HALL1']
+add effects: ['DELIVERED_ROBOT_MK1_HALL1', 'LOC_HAS_MEDKIT_HALL1', 'AT_MK1_HALL1']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM12
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM12']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM12', 'LOC_HAS_MEDKIT_ROOM12', 'AT_MK1_ROOM12']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM11
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM11']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM11', 'LOC_HAS_MEDKIT_ROOM11', 'AT_MK1_ROOM11']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM10
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM10']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM10', 'LOC_HAS_MEDKIT_ROOM10', 'AT_MK1_ROOM10']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM9
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM9']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM9', 'LOC_HAS_MEDKIT_ROOM9', 'AT_MK1_ROOM9']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM5
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM5']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM5', 'LOC_HAS_MEDKIT_ROOM5', 'AT_MK1_ROOM5']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM4
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM4']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM4', 'LOC_HAS_MEDKIT_ROOM4', 'AT_MK1_ROOM4']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM3
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM3']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM3', 'LOC_HAS_MEDKIT_ROOM3', 'AT_MK1_ROOM3']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM2
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM2']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM2', 'LOC_HAS_MEDKIT_ROOM2', 'AT_MK1_ROOM2']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK1_ROOM1
+preconditions: ['HAS_ROBOT_MK1', 'AT_ROBOT_ROOM1']
+add effects: ['DELIVERED_ROBOT_MK1_ROOM1', 'LOC_HAS_MEDKIT_ROOM1', 'AT_MK1_ROOM1']
+delete effects: ['HAS_ROBOT_MK1', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL5
+preconditions: ['AT_MK2_HALL5', 'AT_ROBOT_HALL5']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL5', 'LOC_HAS_MEDKIT_HALL5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL4
+preconditions: ['AT_MK2_HALL4', 'AT_ROBOT_HALL4']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL4', 'LOC_HAS_MEDKIT_HALL4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL3
+preconditions: ['AT_MK2_HALL3', 'AT_ROBOT_HALL3']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL3', 'LOC_HAS_MEDKIT_HALL3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL2
+preconditions: ['AT_MK2_HALL2', 'AT_ROBOT_HALL2']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL2', 'LOC_HAS_MEDKIT_HALL2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_HALL1
+preconditions: ['AT_MK2_HALL1', 'AT_ROBOT_HALL1']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_HALL1', 'LOC_HAS_MEDKIT_HALL1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM12
+preconditions: ['AT_MK2_ROOM12', 'AT_ROBOT_ROOM12']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM12', 'LOC_HAS_MEDKIT_ROOM12']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM11
+preconditions: ['AT_MK2_ROOM11', 'AT_ROBOT_ROOM11']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM11', 'LOC_HAS_MEDKIT_ROOM11']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM5
+preconditions: ['AT_MK2_ROOM5', 'AT_ROBOT_ROOM5']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM5', 'LOC_HAS_MEDKIT_ROOM5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM3
+preconditions: ['AT_MK2_ROOM3', 'AT_ROBOT_ROOM3']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM3', 'LOC_HAS_MEDKIT_ROOM3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK1_ROOM2
+preconditions: ['AT_MK1_ROOM2', 'AT_ROBOT_ROOM2']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK1']
+delete effects: ['AT_MK1_ROOM2', 'LOC_HAS_MEDKIT_ROOM2']
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL6
+preconditions: ['AT_ROBOT_HALL6']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM10
+preconditions: ['AT_ROBOT_ROOM10']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM9
+preconditions: ['AT_ROBOT_ROOM9']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM2
+preconditions: ['AT_ROBOT_ROOM2']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM1
+preconditions: ['AT_ROBOT_ROOM1']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL6
+preconditions: ['AT_ROBOT_HALL6']
+add effects: ['SEARCHED_HALL6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM10
+preconditions: ['AT_ROBOT_ROOM10']
+add effects: ['SEARCHED_ROOM10']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM9
+preconditions: ['AT_ROBOT_ROOM9']
+add effects: ['SEARCHED_ROOM9']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM2
+preconditions: ['AT_ROBOT_ROOM2']
+add effects: ['SEARCHED_ROOM2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM1
+preconditions: ['AT_ROBOT_ROOM1']
+add effects: ['SEARCHED_ROOM1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL6_HALL5
+preconditions: ['AT_ROBOT_HALL6']
+add effects: ['AT_ROBOT_HALL5']
+delete effects: ['AT_ROBOT_HALL6']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL1_ROOM1
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['AT_ROBOT_ROOM1']
+delete effects: ['AT_ROBOT_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL2_ROOM2
+preconditions: ['AT_ROBOT_HALL2']
+add effects: ['AT_ROBOT_ROOM2']
+delete effects: ['AT_ROBOT_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL1_ROOM9
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['AT_ROBOT_ROOM9']
+delete effects: ['AT_ROBOT_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL1_ROOM10
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['AT_ROBOT_ROOM10']
+delete effects: ['AT_ROBOT_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL1_HALL2
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['AT_ROBOT_HALL2']
+delete effects: ['AT_ROBOT_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL2_HALL3
+preconditions: ['AT_ROBOT_HALL2']
+add effects: ['AT_ROBOT_HALL3']
+delete effects: ['AT_ROBOT_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL3_HALL4
+preconditions: ['AT_ROBOT_HALL3']
+add effects: ['AT_ROBOT_HALL4']
+delete effects: ['AT_ROBOT_HALL3']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL5_HALL6
+preconditions: ['AT_ROBOT_HALL5']
+add effects: ['AT_ROBOT_HALL6']
+delete effects: ['AT_ROBOT_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM3_ROOM4
+preconditions: ['AT_ROBOT_ROOM3']
+add effects: ['AT_ROBOT_ROOM4']
+delete effects: ['AT_ROBOT_ROOM3']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM5_HALL5
+preconditions: ['AT_ROBOT_ROOM5']
+add effects: ['AT_ROBOT_HALL5']
+delete effects: ['AT_ROBOT_ROOM5']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM11_HALL4
+preconditions: ['AT_ROBOT_ROOM11']
+add effects: ['AT_ROBOT_HALL4']
+delete effects: ['AT_ROBOT_ROOM11']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM12_HALL5
+preconditions: ['AT_ROBOT_ROOM12']
+add effects: ['AT_ROBOT_HALL5']
+delete effects: ['AT_ROBOT_ROOM12']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL5
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL5']
+add effects: ['DELIVERED_ROBOT_MK2_HALL5', 'LOC_HAS_MEDKIT_HALL5', 'AT_MK2_HALL5']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL4
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL4']
+add effects: ['DELIVERED_ROBOT_MK2_HALL4', 'LOC_HAS_MEDKIT_HALL4', 'AT_MK2_HALL4']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL3
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL3']
+add effects: ['DELIVERED_ROBOT_MK2_HALL3', 'LOC_HAS_MEDKIT_HALL3', 'AT_MK2_HALL3']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL2
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL2']
+add effects: ['DELIVERED_ROBOT_MK2_HALL2', 'LOC_HAS_MEDKIT_HALL2', 'AT_MK2_HALL2']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_HALL1
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_HALL1']
+add effects: ['DELIVERED_ROBOT_MK2_HALL1', 'LOC_HAS_MEDKIT_HALL1', 'AT_MK2_HALL1']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM12
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM12']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM12', 'LOC_HAS_MEDKIT_ROOM12', 'AT_MK2_ROOM12']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM11
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM11']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM11', 'LOC_HAS_MEDKIT_ROOM11', 'AT_MK2_ROOM11']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM5
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM5']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM5', 'LOC_HAS_MEDKIT_ROOM5', 'AT_MK2_ROOM5']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM3
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM3']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM3', 'LOC_HAS_MEDKIT_ROOM3', 'AT_MK2_ROOM3']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL5
+preconditions: ['AT_ROBOT_HALL5']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL4
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL3
+preconditions: ['AT_ROBOT_HALL3']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL2
+preconditions: ['AT_ROBOT_HALL2']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_HALL1
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM12
+preconditions: ['AT_ROBOT_ROOM12']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM11
+preconditions: ['AT_ROBOT_ROOM11']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM5
+preconditions: ['AT_ROBOT_ROOM5']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM4
+preconditions: ['AT_ROBOT_ROOM4']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_ROBOT_ROBOT_ROOM3
+preconditions: ['AT_ROBOT_ROOM3']
+add effects: ['HAS_MET_ROBOT_ROBOT']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL5
+preconditions: ['AT_ROBOT_HALL5']
+add effects: ['SEARCHED_HALL5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL4
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['SEARCHED_HALL4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL3
+preconditions: ['AT_ROBOT_HALL3']
+add effects: ['SEARCHED_HALL3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL2
+preconditions: ['AT_ROBOT_HALL2']
+add effects: ['SEARCHED_HALL2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_HALL1
+preconditions: ['AT_ROBOT_HALL1']
+add effects: ['SEARCHED_HALL1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM12
+preconditions: ['AT_ROBOT_ROOM12']
+add effects: ['SEARCHED_ROOM12']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM11
+preconditions: ['AT_ROBOT_ROOM11']
+add effects: ['SEARCHED_ROOM11']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM5
+preconditions: ['AT_ROBOT_ROOM5']
+add effects: ['SEARCHED_ROOM5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM4
+preconditions: ['AT_ROBOT_ROOM4']
+add effects: ['SEARCHED_ROOM4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_ROBOT_ROOM3
+preconditions: ['AT_ROBOT_ROOM3']
+add effects: ['SEARCHED_ROOM3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL2_HALL1
+preconditions: ['AT_ROBOT_HALL2']
+add effects: ['AT_ROBOT_HALL1']
+delete effects: ['AT_ROBOT_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL3_HALL2
+preconditions: ['AT_ROBOT_HALL3']
+add effects: ['AT_ROBOT_HALL2']
+delete effects: ['AT_ROBOT_HALL3']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL4_HALL3
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['AT_ROBOT_HALL3']
+delete effects: ['AT_ROBOT_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_ROOM4_ROOM3
+preconditions: ['AT_ROBOT_ROOM4']
+add effects: ['AT_ROBOT_ROOM3']
+delete effects: ['AT_ROBOT_ROOM4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL4_ROOM4
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['AT_ROBOT_ROOM4']
+delete effects: ['AT_ROBOT_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL5_ROOM5
+preconditions: ['AT_ROBOT_HALL5']
+add effects: ['AT_ROBOT_ROOM5']
+delete effects: ['AT_ROBOT_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL4_ROOM11
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['AT_ROBOT_ROOM11']
+delete effects: ['AT_ROBOT_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_ROBOT_HALL5_ROOM12
+preconditions: ['AT_ROBOT_HALL5']
+add effects: ['AT_ROBOT_ROOM12']
+delete effects: ['AT_ROBOT_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_HALL4_HALL5
+preconditions: ['AT_ROBOT_HALL4']
+add effects: ['AT_ROBOT_HALL5']
+delete effects: ['AT_ROBOT_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_ROBOT_ROOM4_HALL4
+preconditions: ['AT_ROBOT_ROOM4']
+add effects: ['AT_ROBOT_HALL4']
+delete effects: ['AT_ROBOT_ROOM4']
+cost: 1.0
+
+
+Action Name: DROP_OFF_ROBOT_MK2_ROOM4
+preconditions: ['HAS_ROBOT_MK2', 'AT_ROBOT_ROOM4']
+add effects: ['DELIVERED_ROBOT_MK2_ROOM4', 'LOC_HAS_MEDKIT_ROOM4', 'AT_MK2_ROOM4']
+delete effects: ['HAS_ROBOT_MK2', 'HAS_MEDKIT_ROBOT']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_ROBOT_MK2_ROOM4
+preconditions: ['AT_MK2_ROOM4', 'AT_ROBOT_ROOM4']
+add effects: ['HAS_MEDKIT_ROBOT', 'HAS_ROBOT_MK2']
+delete effects: ['AT_MK2_ROOM4', 'LOC_HAS_MEDKIT_ROOM4']
+cost: 1.0
+
+
+*** ACTION DESCRIPTIONS for commX ***
+
+Action Name: NOOP
+preconditions: []
+add effects: []
+delete effects: []
+cost: 0.01
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL5_HALL4
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['AT_COMMX_HALL4']
+delete effects: ['AT_COMMX_HALL5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL8
+preconditions: ['AT_MK2_HALL8', 'AT_COMMX_HALL8']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL8', 'LOC_HAS_MEDKIT_HALL8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL7
+preconditions: ['AT_MK2_HALL7', 'AT_COMMX_HALL7']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL7', 'LOC_HAS_MEDKIT_HALL7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL6
+preconditions: ['AT_MK2_HALL6', 'AT_COMMX_HALL6']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL6', 'LOC_HAS_MEDKIT_HALL6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL5
+preconditions: ['AT_MK2_HALL5', 'AT_COMMX_HALL5']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL5', 'LOC_HAS_MEDKIT_HALL5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL4
+preconditions: ['AT_MK2_HALL4', 'AT_COMMX_HALL4']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL4', 'LOC_HAS_MEDKIT_HALL4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL3
+preconditions: ['AT_MK2_HALL3', 'AT_COMMX_HALL3']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL3', 'LOC_HAS_MEDKIT_HALL3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL2
+preconditions: ['AT_MK2_HALL2', 'AT_COMMX_HALL2']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL2', 'LOC_HAS_MEDKIT_HALL2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_HALL1
+preconditions: ['AT_MK2_HALL1', 'AT_COMMX_HALL1']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_HALL1', 'LOC_HAS_MEDKIT_HALL1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM13
+preconditions: ['AT_MK2_ROOM13', 'AT_COMMX_ROOM13']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM13', 'LOC_HAS_MEDKIT_ROOM13']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM12
+preconditions: ['AT_MK2_ROOM12', 'AT_COMMX_ROOM12']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM12', 'LOC_HAS_MEDKIT_ROOM12']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM11
+preconditions: ['AT_MK2_ROOM11', 'AT_COMMX_ROOM11']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM11', 'LOC_HAS_MEDKIT_ROOM11']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM10
+preconditions: ['AT_MK2_ROOM10', 'AT_COMMX_ROOM10']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM10', 'LOC_HAS_MEDKIT_ROOM10']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM9
+preconditions: ['AT_MK2_ROOM9', 'AT_COMMX_ROOM9']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM9', 'LOC_HAS_MEDKIT_ROOM9']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM8
+preconditions: ['AT_MK2_ROOM8', 'AT_COMMX_ROOM8']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM8', 'LOC_HAS_MEDKIT_ROOM8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM7
+preconditions: ['AT_MK2_ROOM7', 'AT_COMMX_ROOM7']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM7', 'LOC_HAS_MEDKIT_ROOM7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM6
+preconditions: ['AT_MK2_ROOM6', 'AT_COMMX_ROOM6']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM6', 'LOC_HAS_MEDKIT_ROOM6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM5
+preconditions: ['AT_MK2_ROOM5', 'AT_COMMX_ROOM5']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM5', 'LOC_HAS_MEDKIT_ROOM5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM3
+preconditions: ['AT_MK2_ROOM3', 'AT_COMMX_ROOM3']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM3', 'LOC_HAS_MEDKIT_ROOM3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM2
+preconditions: ['AT_MK2_ROOM2', 'AT_COMMX_ROOM2']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM2', 'LOC_HAS_MEDKIT_ROOM2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM1
+preconditions: ['AT_MK2_ROOM1', 'AT_COMMX_ROOM1']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM1', 'LOC_HAS_MEDKIT_ROOM1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL8
+preconditions: ['AT_MK1_HALL8', 'AT_COMMX_HALL8']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL8', 'LOC_HAS_MEDKIT_HALL8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL7
+preconditions: ['AT_MK1_HALL7', 'AT_COMMX_HALL7']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL7', 'LOC_HAS_MEDKIT_HALL7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL6
+preconditions: ['AT_MK1_HALL6', 'AT_COMMX_HALL6']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL6', 'LOC_HAS_MEDKIT_HALL6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL5
+preconditions: ['AT_MK1_HALL5', 'AT_COMMX_HALL5']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL5', 'LOC_HAS_MEDKIT_HALL5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL4
+preconditions: ['AT_MK1_HALL4', 'AT_COMMX_HALL4']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL4', 'LOC_HAS_MEDKIT_HALL4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL3
+preconditions: ['AT_MK1_HALL3', 'AT_COMMX_HALL3']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL3', 'LOC_HAS_MEDKIT_HALL3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL2
+preconditions: ['AT_MK1_HALL2', 'AT_COMMX_HALL2']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL2', 'LOC_HAS_MEDKIT_HALL2']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_HALL1
+preconditions: ['AT_MK1_HALL1', 'AT_COMMX_HALL1']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_HALL1', 'LOC_HAS_MEDKIT_HALL1']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM13
+preconditions: ['AT_MK1_ROOM13', 'AT_COMMX_ROOM13']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM13', 'LOC_HAS_MEDKIT_ROOM13']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM12
+preconditions: ['AT_MK1_ROOM12', 'AT_COMMX_ROOM12']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM12', 'LOC_HAS_MEDKIT_ROOM12']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM11
+preconditions: ['AT_MK1_ROOM11', 'AT_COMMX_ROOM11']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM11', 'LOC_HAS_MEDKIT_ROOM11']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM10
+preconditions: ['AT_MK1_ROOM10', 'AT_COMMX_ROOM10']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM10', 'LOC_HAS_MEDKIT_ROOM10']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM9
+preconditions: ['AT_MK1_ROOM9', 'AT_COMMX_ROOM9']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM9', 'LOC_HAS_MEDKIT_ROOM9']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM8
+preconditions: ['AT_MK1_ROOM8', 'AT_COMMX_ROOM8']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM8', 'LOC_HAS_MEDKIT_ROOM8']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM7
+preconditions: ['AT_MK1_ROOM7', 'AT_COMMX_ROOM7']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM7', 'LOC_HAS_MEDKIT_ROOM7']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM6
+preconditions: ['AT_MK1_ROOM6', 'AT_COMMX_ROOM6']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM6', 'LOC_HAS_MEDKIT_ROOM6']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM5
+preconditions: ['AT_MK1_ROOM5', 'AT_COMMX_ROOM5']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM5', 'LOC_HAS_MEDKIT_ROOM5']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM4
+preconditions: ['AT_MK1_ROOM4', 'AT_COMMX_ROOM4']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM4', 'LOC_HAS_MEDKIT_ROOM4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM3
+preconditions: ['AT_MK1_ROOM3', 'AT_COMMX_ROOM3']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM3', 'LOC_HAS_MEDKIT_ROOM3']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM1
+preconditions: ['AT_MK1_ROOM1', 'AT_COMMX_ROOM1']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM1', 'LOC_HAS_MEDKIT_ROOM1']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM1_HALL1
+preconditions: ['AT_COMMX_ROOM1']
+add effects: ['AT_COMMX_HALL1']
+delete effects: ['AT_COMMX_ROOM1']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM2_HALL2
+preconditions: ['AT_COMMX_ROOM2']
+add effects: ['AT_COMMX_HALL2']
+delete effects: ['AT_COMMX_ROOM2']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM3_ROOM4
+preconditions: ['AT_COMMX_ROOM3']
+add effects: ['AT_COMMX_ROOM4']
+delete effects: ['AT_COMMX_ROOM3']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM4_HALL4
+preconditions: ['AT_COMMX_ROOM4']
+add effects: ['AT_COMMX_HALL4']
+delete effects: ['AT_COMMX_ROOM4']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM5_HALL5
+preconditions: ['AT_COMMX_ROOM5']
+add effects: ['AT_COMMX_HALL5']
+delete effects: ['AT_COMMX_ROOM5']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM6_ROOM7
+preconditions: ['AT_COMMX_ROOM6']
+add effects: ['AT_COMMX_ROOM7']
+delete effects: ['AT_COMMX_ROOM6']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM7_HALL7
+preconditions: ['AT_COMMX_ROOM7']
+add effects: ['AT_COMMX_HALL7']
+delete effects: ['AT_COMMX_ROOM7']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM9_HALL1
+preconditions: ['AT_COMMX_ROOM9']
+add effects: ['AT_COMMX_HALL1']
+delete effects: ['AT_COMMX_ROOM9']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM10_HALL1
+preconditions: ['AT_COMMX_ROOM10']
+add effects: ['AT_COMMX_HALL1']
+delete effects: ['AT_COMMX_ROOM10']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM11_HALL4
+preconditions: ['AT_COMMX_ROOM11']
+add effects: ['AT_COMMX_HALL4']
+delete effects: ['AT_COMMX_ROOM11']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM12_HALL5
+preconditions: ['AT_COMMX_ROOM12']
+add effects: ['AT_COMMX_HALL5']
+delete effects: ['AT_COMMX_ROOM12']
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL8
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL8']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL7
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL7']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL6
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL6']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL5
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL5']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL4
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL4']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL3
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL3']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL2
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL2']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_HALL1
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_HALL1']
+add effects: ['CONDUCTED_TRIAGE_COMMX_HALL1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM13
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM13']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM13']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM12
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM12']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM12']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM11
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM11']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM11']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM10
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM10']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM10']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM9
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM9']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM9']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM8
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM8']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM7
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM7']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM6
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM6']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM5
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM5']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM4
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM4']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM3
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM3']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM2
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM2']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: CONDUCT_TRIAGE_COMMX_ROOM1
+preconditions: ['HAS_MEDKIT_COMMX', 'AT_COMMX_ROOM1']
+add effects: ['CONDUCTED_TRIAGE_COMMX_ROOM1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL8
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL8']
+add effects: ['DELIVERED_COMMX_MK2_HALL8', 'LOC_HAS_MEDKIT_HALL8', 'AT_MK2_HALL8']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL7
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL7']
+add effects: ['DELIVERED_COMMX_MK2_HALL7', 'LOC_HAS_MEDKIT_HALL7', 'AT_MK2_HALL7']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL6
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL6']
+add effects: ['DELIVERED_COMMX_MK2_HALL6', 'LOC_HAS_MEDKIT_HALL6', 'AT_MK2_HALL6']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL5
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL5']
+add effects: ['DELIVERED_COMMX_MK2_HALL5', 'LOC_HAS_MEDKIT_HALL5', 'AT_MK2_HALL5']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL4
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL4']
+add effects: ['DELIVERED_COMMX_MK2_HALL4', 'LOC_HAS_MEDKIT_HALL4', 'AT_MK2_HALL4']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL3
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL3']
+add effects: ['DELIVERED_COMMX_MK2_HALL3', 'LOC_HAS_MEDKIT_HALL3', 'AT_MK2_HALL3']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL2
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL2']
+add effects: ['DELIVERED_COMMX_MK2_HALL2', 'LOC_HAS_MEDKIT_HALL2', 'AT_MK2_HALL2']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_HALL1
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_HALL1']
+add effects: ['DELIVERED_COMMX_MK2_HALL1', 'LOC_HAS_MEDKIT_HALL1', 'AT_MK2_HALL1']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM13
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM13']
+add effects: ['DELIVERED_COMMX_MK2_ROOM13', 'LOC_HAS_MEDKIT_ROOM13', 'AT_MK2_ROOM13']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM12
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM12']
+add effects: ['DELIVERED_COMMX_MK2_ROOM12', 'LOC_HAS_MEDKIT_ROOM12', 'AT_MK2_ROOM12']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM11
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM11']
+add effects: ['DELIVERED_COMMX_MK2_ROOM11', 'LOC_HAS_MEDKIT_ROOM11', 'AT_MK2_ROOM11']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM10
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM10']
+add effects: ['DELIVERED_COMMX_MK2_ROOM10', 'LOC_HAS_MEDKIT_ROOM10', 'AT_MK2_ROOM10']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM9
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM9']
+add effects: ['DELIVERED_COMMX_MK2_ROOM9', 'LOC_HAS_MEDKIT_ROOM9', 'AT_MK2_ROOM9']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM8
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM8']
+add effects: ['DELIVERED_COMMX_MK2_ROOM8', 'LOC_HAS_MEDKIT_ROOM8', 'AT_MK2_ROOM8']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM7
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM7']
+add effects: ['DELIVERED_COMMX_MK2_ROOM7', 'LOC_HAS_MEDKIT_ROOM7', 'AT_MK2_ROOM7']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM6
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM6']
+add effects: ['DELIVERED_COMMX_MK2_ROOM6', 'LOC_HAS_MEDKIT_ROOM6', 'AT_MK2_ROOM6']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM5
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM5']
+add effects: ['DELIVERED_COMMX_MK2_ROOM5', 'LOC_HAS_MEDKIT_ROOM5', 'AT_MK2_ROOM5']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM4
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM4']
+add effects: ['DELIVERED_COMMX_MK2_ROOM4', 'LOC_HAS_MEDKIT_ROOM4', 'AT_MK2_ROOM4']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM3
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM3']
+add effects: ['DELIVERED_COMMX_MK2_ROOM3', 'LOC_HAS_MEDKIT_ROOM3', 'AT_MK2_ROOM3']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM2
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM2']
+add effects: ['DELIVERED_COMMX_MK2_ROOM2', 'LOC_HAS_MEDKIT_ROOM2', 'AT_MK2_ROOM2']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK2_ROOM1
+preconditions: ['HAS_COMMX_MK2', 'AT_COMMX_ROOM1']
+add effects: ['DELIVERED_COMMX_MK2_ROOM1', 'LOC_HAS_MEDKIT_ROOM1', 'AT_MK2_ROOM1']
+delete effects: ['HAS_COMMX_MK2', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL8
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL8']
+add effects: ['DELIVERED_COMMX_MK1_HALL8', 'LOC_HAS_MEDKIT_HALL8', 'AT_MK1_HALL8']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL7
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL7']
+add effects: ['DELIVERED_COMMX_MK1_HALL7', 'LOC_HAS_MEDKIT_HALL7', 'AT_MK1_HALL7']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL6
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL6']
+add effects: ['DELIVERED_COMMX_MK1_HALL6', 'LOC_HAS_MEDKIT_HALL6', 'AT_MK1_HALL6']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL5
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL5']
+add effects: ['DELIVERED_COMMX_MK1_HALL5', 'LOC_HAS_MEDKIT_HALL5', 'AT_MK1_HALL5']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL4
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL4']
+add effects: ['DELIVERED_COMMX_MK1_HALL4', 'LOC_HAS_MEDKIT_HALL4', 'AT_MK1_HALL4']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL3
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL3']
+add effects: ['DELIVERED_COMMX_MK1_HALL3', 'LOC_HAS_MEDKIT_HALL3', 'AT_MK1_HALL3']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL2
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL2']
+add effects: ['DELIVERED_COMMX_MK1_HALL2', 'LOC_HAS_MEDKIT_HALL2', 'AT_MK1_HALL2']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_HALL1
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_HALL1']
+add effects: ['DELIVERED_COMMX_MK1_HALL1', 'LOC_HAS_MEDKIT_HALL1', 'AT_MK1_HALL1']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM13
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM13']
+add effects: ['DELIVERED_COMMX_MK1_ROOM13', 'LOC_HAS_MEDKIT_ROOM13', 'AT_MK1_ROOM13']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM12
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM12']
+add effects: ['DELIVERED_COMMX_MK1_ROOM12', 'LOC_HAS_MEDKIT_ROOM12', 'AT_MK1_ROOM12']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM11
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM11']
+add effects: ['DELIVERED_COMMX_MK1_ROOM11', 'LOC_HAS_MEDKIT_ROOM11', 'AT_MK1_ROOM11']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM10
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM10']
+add effects: ['DELIVERED_COMMX_MK1_ROOM10', 'LOC_HAS_MEDKIT_ROOM10', 'AT_MK1_ROOM10']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM9
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM9']
+add effects: ['DELIVERED_COMMX_MK1_ROOM9', 'LOC_HAS_MEDKIT_ROOM9', 'AT_MK1_ROOM9']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM8
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM8']
+add effects: ['DELIVERED_COMMX_MK1_ROOM8', 'LOC_HAS_MEDKIT_ROOM8', 'AT_MK1_ROOM8']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM7
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM7']
+add effects: ['DELIVERED_COMMX_MK1_ROOM7', 'LOC_HAS_MEDKIT_ROOM7', 'AT_MK1_ROOM7']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM6
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM6']
+add effects: ['DELIVERED_COMMX_MK1_ROOM6', 'LOC_HAS_MEDKIT_ROOM6', 'AT_MK1_ROOM6']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM5
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM5']
+add effects: ['DELIVERED_COMMX_MK1_ROOM5', 'LOC_HAS_MEDKIT_ROOM5', 'AT_MK1_ROOM5']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM4
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM4']
+add effects: ['DELIVERED_COMMX_MK1_ROOM4', 'LOC_HAS_MEDKIT_ROOM4', 'AT_MK1_ROOM4']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM3
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM3']
+add effects: ['DELIVERED_COMMX_MK1_ROOM3', 'LOC_HAS_MEDKIT_ROOM3', 'AT_MK1_ROOM3']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM2
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM2']
+add effects: ['DELIVERED_COMMX_MK1_ROOM2', 'LOC_HAS_MEDKIT_ROOM2', 'AT_MK1_ROOM2']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: DROP_OFF_COMMX_MK1_ROOM1
+preconditions: ['HAS_COMMX_MK1', 'AT_COMMX_ROOM1']
+add effects: ['DELIVERED_COMMX_MK1_ROOM1', 'LOC_HAS_MEDKIT_ROOM1', 'AT_MK1_ROOM1']
+delete effects: ['HAS_COMMX_MK1', 'HAS_MEDKIT_COMMX']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK2_ROOM4
+preconditions: ['AT_MK2_ROOM4', 'AT_COMMX_ROOM4']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK2']
+delete effects: ['AT_MK2_ROOM4', 'LOC_HAS_MEDKIT_ROOM4']
+cost: 1.0
+
+
+Action Name: PICK_UP_MEDKIT_COMMX_MK1_ROOM2
+preconditions: ['AT_MK1_ROOM2', 'AT_COMMX_ROOM2']
+add effects: ['HAS_MEDKIT_COMMX', 'HAS_COMMX_MK1']
+delete effects: ['AT_MK1_ROOM2', 'LOC_HAS_MEDKIT_ROOM2']
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM12
+preconditions: ['AT_COMMX_ROOM12']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM11
+preconditions: ['AT_COMMX_ROOM11']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM10
+preconditions: ['AT_COMMX_ROOM10']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM9
+preconditions: ['AT_COMMX_ROOM9']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM7
+preconditions: ['AT_COMMX_ROOM7']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM6
+preconditions: ['AT_COMMX_ROOM6']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM5
+preconditions: ['AT_COMMX_ROOM5']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM4
+preconditions: ['AT_COMMX_ROOM4']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM3
+preconditions: ['AT_COMMX_ROOM3']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM2
+preconditions: ['AT_COMMX_ROOM2']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM1
+preconditions: ['AT_COMMX_ROOM1']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM12
+preconditions: ['AT_COMMX_ROOM12']
+add effects: ['SEARCHED_ROOM12']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM11
+preconditions: ['AT_COMMX_ROOM11']
+add effects: ['SEARCHED_ROOM11']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM10
+preconditions: ['AT_COMMX_ROOM10']
+add effects: ['SEARCHED_ROOM10']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM9
+preconditions: ['AT_COMMX_ROOM9']
+add effects: ['SEARCHED_ROOM9']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM7
+preconditions: ['AT_COMMX_ROOM7']
+add effects: ['SEARCHED_ROOM7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM6
+preconditions: ['AT_COMMX_ROOM6']
+add effects: ['SEARCHED_ROOM6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM5
+preconditions: ['AT_COMMX_ROOM5']
+add effects: ['SEARCHED_ROOM5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM4
+preconditions: ['AT_COMMX_ROOM4']
+add effects: ['SEARCHED_ROOM4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM3
+preconditions: ['AT_COMMX_ROOM3']
+add effects: ['SEARCHED_ROOM3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM2
+preconditions: ['AT_COMMX_ROOM2']
+add effects: ['SEARCHED_ROOM2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM1
+preconditions: ['AT_COMMX_ROOM1']
+add effects: ['SEARCHED_ROOM1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL1_ROOM1
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['AT_COMMX_ROOM1']
+delete effects: ['AT_COMMX_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL2_ROOM2
+preconditions: ['AT_COMMX_HALL2']
+add effects: ['AT_COMMX_ROOM2']
+delete effects: ['AT_COMMX_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_ROOM4_ROOM3
+preconditions: ['AT_COMMX_ROOM4']
+add effects: ['AT_COMMX_ROOM3']
+delete effects: ['AT_COMMX_ROOM4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL4_ROOM4
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['AT_COMMX_ROOM4']
+delete effects: ['AT_COMMX_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL5_ROOM5
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['AT_COMMX_ROOM5']
+delete effects: ['AT_COMMX_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_ROOM7_ROOM6
+preconditions: ['AT_COMMX_ROOM7']
+add effects: ['AT_COMMX_ROOM6']
+delete effects: ['AT_COMMX_ROOM7']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL7_ROOM7
+preconditions: ['AT_COMMX_HALL7']
+add effects: ['AT_COMMX_ROOM7']
+delete effects: ['AT_COMMX_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL1_ROOM9
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['AT_COMMX_ROOM9']
+delete effects: ['AT_COMMX_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL1_ROOM10
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['AT_COMMX_ROOM10']
+delete effects: ['AT_COMMX_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL4_ROOM11
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['AT_COMMX_ROOM11']
+delete effects: ['AT_COMMX_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL5_ROOM12
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['AT_COMMX_ROOM12']
+delete effects: ['AT_COMMX_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL1_HALL2
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['AT_COMMX_HALL2']
+delete effects: ['AT_COMMX_HALL1']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL2_HALL3
+preconditions: ['AT_COMMX_HALL2']
+add effects: ['AT_COMMX_HALL3']
+delete effects: ['AT_COMMX_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL3_HALL4
+preconditions: ['AT_COMMX_HALL3']
+add effects: ['AT_COMMX_HALL4']
+delete effects: ['AT_COMMX_HALL3']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL4_HALL5
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['AT_COMMX_HALL5']
+delete effects: ['AT_COMMX_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL5_HALL6
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['AT_COMMX_HALL6']
+delete effects: ['AT_COMMX_HALL5']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL6_HALL7
+preconditions: ['AT_COMMX_HALL6']
+add effects: ['AT_COMMX_HALL7']
+delete effects: ['AT_COMMX_HALL6']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_HALL7_HALL8
+preconditions: ['AT_COMMX_HALL7']
+add effects: ['AT_COMMX_HALL8']
+delete effects: ['AT_COMMX_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM8_HALL8
+preconditions: ['AT_COMMX_ROOM8']
+add effects: ['AT_COMMX_HALL8']
+delete effects: ['AT_COMMX_ROOM8']
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL8
+preconditions: ['AT_COMMX_HALL8']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL7
+preconditions: ['AT_COMMX_HALL7']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL6
+preconditions: ['AT_COMMX_HALL6']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL5
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL4
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL3
+preconditions: ['AT_COMMX_HALL3']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL2
+preconditions: ['AT_COMMX_HALL2']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_HALL1
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM13
+preconditions: ['AT_COMMX_ROOM13']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MEET_COMMX_COMMX_ROOM8
+preconditions: ['AT_COMMX_ROOM8']
+add effects: ['HAS_MET_COMMX_COMMX']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL8
+preconditions: ['AT_COMMX_HALL8']
+add effects: ['SEARCHED_HALL8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL7
+preconditions: ['AT_COMMX_HALL7']
+add effects: ['SEARCHED_HALL7']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL6
+preconditions: ['AT_COMMX_HALL6']
+add effects: ['SEARCHED_HALL6']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL5
+preconditions: ['AT_COMMX_HALL5']
+add effects: ['SEARCHED_HALL5']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL4
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['SEARCHED_HALL4']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL3
+preconditions: ['AT_COMMX_HALL3']
+add effects: ['SEARCHED_HALL3']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL2
+preconditions: ['AT_COMMX_HALL2']
+add effects: ['SEARCHED_HALL2']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_HALL1
+preconditions: ['AT_COMMX_HALL1']
+add effects: ['SEARCHED_HALL1']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM13
+preconditions: ['AT_COMMX_ROOM13']
+add effects: ['SEARCHED_ROOM13']
+delete effects: []
+cost: 1.0
+
+
+Action Name: SEARCH_COMMX_ROOM8
+preconditions: ['AT_COMMX_ROOM8']
+add effects: ['SEARCHED_ROOM8']
+delete effects: []
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL2_HALL1
+preconditions: ['AT_COMMX_HALL2']
+add effects: ['AT_COMMX_HALL1']
+delete effects: ['AT_COMMX_HALL2']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL3_HALL2
+preconditions: ['AT_COMMX_HALL3']
+add effects: ['AT_COMMX_HALL2']
+delete effects: ['AT_COMMX_HALL3']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL4_HALL3
+preconditions: ['AT_COMMX_HALL4']
+add effects: ['AT_COMMX_HALL3']
+delete effects: ['AT_COMMX_HALL4']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL6_HALL5
+preconditions: ['AT_COMMX_HALL6']
+add effects: ['AT_COMMX_HALL5']
+delete effects: ['AT_COMMX_HALL6']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL7_HALL6
+preconditions: ['AT_COMMX_HALL7']
+add effects: ['AT_COMMX_HALL6']
+delete effects: ['AT_COMMX_HALL7']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL8_HALL7
+preconditions: ['AT_COMMX_HALL8']
+add effects: ['AT_COMMX_HALL7']
+delete effects: ['AT_COMMX_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL8_ROOM8
+preconditions: ['AT_COMMX_HALL8']
+add effects: ['AT_COMMX_ROOM8']
+delete effects: ['AT_COMMX_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_REVERSE_COMMX_HALL8_ROOM13
+preconditions: ['AT_COMMX_HALL8']
+add effects: ['AT_COMMX_ROOM13']
+delete effects: ['AT_COMMX_HALL8']
+cost: 1.0
+
+
+Action Name: MOVE_COMMX_ROOM13_HALL8
+preconditions: ['AT_COMMX_ROOM13']
+add effects: ['AT_COMMX_HALL8']
+delete effects: ['AT_COMMX_ROOM13']
+cost: 1.0
+

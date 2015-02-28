@@ -1,8 +1,8 @@
 flagOPT                     	  = True
-listOfPredicates_robot            = []
-listOfActions_robot               = []
-initState_robot                   = []
-goalState_robot                   = []
+listOfPredicates_super            = []
+listOfActions_super               = []
+initState_super                   = []
+goalState_super                   = []
 
 listOfPredicates_human            = []
 listOfActions_human               = []

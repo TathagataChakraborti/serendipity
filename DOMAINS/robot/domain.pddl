@@ -153,23 +153,16 @@
 		( AT_MK1_ROOM2 )
 		( AT_ROBOT_ROOM4 )
 		( AT_MK2_ROOM4 )
-		( EXPLAINED_MOVE_REVERSE_ROBOT_HALL5_HALL4_1 )
-		( NOT_EXPLAINED_MOVE_REVERSE_ROBOT_HALL5_HALL4_1 )
-		( EXPLAINED_FULL_OBS_SEQUENCE )
-		( NOT_EXPLAINED_FULL_OBS_SEQUENCE )
 	) 
 	(:functions (total-cost))
 	(:action NOOP
 		:parameters ()
 		:precondition
 		(and
-			( AT_ROBOT_HALL5 )
 		)
 		:effect
 		(and
-			(increase (total-cost) 1)
-			( AT_ROBOT_HALL4 )
-			(not ( AT_ROBOT_HALL5 ))
+			(increase (total-cost) 0.01)
 		)
 	(:action MOVE_REVERSE_ROBOT_HALL5_HALL4
 		:parameters ()
