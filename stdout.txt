@@ -1,0 +1,63 @@
+INFO     Running search.
+INFO     search input: output
+INFO     search executable: /home/tchakra2/Desktop/FAST-DOWNWARD/src/search/downward-release
+INFO     search arguments: ['--search', 'astar(lmcut())', '--internal-plan-file', 'sas_plan']
+reading input... [t=0s]
+Simplifying transitions... done!
+done reading input! [t=0s]
+building causal graph...done! [t=0s]
+packing state variables...done! [t=0s]
+Variables: 67
+Facts: 134
+Bytes per state: 12
+done initalizing global data [t=0s]
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+Initializing landmark cut heuristic...
+f = 12 [1 evaluated, 0 expanded, t=0s, 3060 KB]
+Best heuristic value: 12 [g=0, 1 evaluated, 0 expanded, t=0s, 3060 KB]
+Best heuristic value: 11 [g=1, 2 evaluated, 1 expanded, t=0s, 3060 KB]
+Best heuristic value: 10 [g=2, 3 evaluated, 2 expanded, t=0s, 3060 KB]
+Best heuristic value: 9 [g=3, 5 evaluated, 3 expanded, t=0s, 3060 KB]
+Best heuristic value: 8 [g=4, 7 evaluated, 4 expanded, t=0s, 3060 KB]
+Best heuristic value: 7 [g=5, 8 evaluated, 5 expanded, t=0s, 3060 KB]
+Best heuristic value: 6 [g=6, 11 evaluated, 6 expanded, t=0s, 3060 KB]
+Best heuristic value: 5 [g=7, 14 evaluated, 7 expanded, t=0s, 3060 KB]
+f = 13 [16 evaluated, 8 expanded, t=0s, 3060 KB]
+Best heuristic value: 4 [g=9, 20 evaluated, 10 expanded, t=0s, 3060 KB]
+Best heuristic value: 3 [g=10, 21 evaluated, 11 expanded, t=0s, 3060 KB]
+Best heuristic value: 2 [g=11, 23 evaluated, 12 expanded, t=0s, 3060 KB]
+Best heuristic value: 1 [g=12, 25 evaluated, 13 expanded, t=0s, 3060 KB]
+Best heuristic value: 0 [g=13, 30 evaluated, 14 expanded, t=0s, 3060 KB]
+Solution found!
+Actual search time: 0s [t=0s]
+move_commx_room13_hall8  (1)
+move_reverse_commx_hall8_hall7  (1)
+move_reverse_commx_hall7_hall6  (1)
+move_reverse_commx_hall6_hall5  (1)
+move_reverse_commx_hall5_hall4  (1)
+move_reverse_commx_hall4_hall3  (1)
+move_reverse_commx_hall3_hall2  (1)
+move_reverse_commx_hall2_room2  (1)
+pick_up_medkit_commx_mk1_room2  (1)
+move_commx_room2_hall2  (1)
+move_reverse_commx_hall2_hall1  (1)
+move_reverse_commx_hall1_room1  (1)
+conduct_triage_commx_room1  (1)
+Plan length: 13 step(s).
+Plan cost: 13
+Initial state h value: 12.
+Expanded 15 state(s).
+Reopened 0 state(s).
+Evaluated 30 state(s).
+Evaluations: 30
+Generated 42 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 8 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 16 state(s).
+Generated until last jump: 22 state(s).
+Number of registered states: 30
+Search time: 0s
+Total time: 0s
+Solution found.
+Peak memory: 3060 KB
