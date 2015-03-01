@@ -153,16 +153,17 @@
 		( AT_MK1_ROOM2 )
 		( AT_ROBOT_ROOM4 )
 		( AT_MK2_ROOM4 )
+		( BOB )
 	) 
 	(:functions (total-cost))
-	(:action NOOP
+	(:action NOOP_ROBOT
 		:parameters ()
 		:precondition
 		(and
 		)
 		:effect
 		(and
-			(increase (total-cost) 1)
+			(increase (total-cost) 0.01)
 		)
 	(:action MOVE_REVERSE_ROBOT_HALL5_HALL4
 		:parameters ()

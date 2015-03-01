@@ -35,7 +35,7 @@ def read_input(domainFile, problemFile, flag, discount):
             line = f_domain.readline()
             line = f_domain.readline()
             cost = float(line.split('(increase (total-cost) ')[1].split(')')[0]) 
-            if 'ROBOT' in name:
+            if 'ROBOT' in name and 'COMMX' not in name:
                 cost = discount*cost
             line = f_domain.readline()
             add_effects = []
@@ -88,10 +88,18 @@ def read_input(domainFile, problemFile, flag, discount):
 
     f_problem.close()
         
-    globalVAR.listOfPredicates[flag] = copy.deepcopy(varList)
-    globalVAR.listOfActions[flag]    = copy.deepcopy(operatorList)
-    globalVAR.initState[flag]        = copy.deepcopy(initState)
-    globalVAR.goalState[flag]        = copy.deepcopy(goalState)
+    if flag == 'super':
+        globalVAR.listOfPredicates_super = copy.deepcopy(varList)
+        globalVAR.listOfActions_super    = copy.deepcopy(operatorList)
+        globalVAR.initState_super        = copy.deepcopy(initState)
+        globalVAR.goalState_super        = copy.deepcopy(goalState)
+    elif flag == 'human':
+        globalVAR.listOfPredicates_human = copy.deepcopy(varList)
+        globalVAR.listOfActions_human    = copy.deepcopy(operatorList)
+        globalVAR.initState_human        = copy.deepcopy(initState)
+        globalVAR.goalState_human        = copy.deepcopy(goalState)
+    else:
+        raise Exception("Sob bhul hoeche!")
         
 if __name__ == '__main__':
     read_sas_file('output.sas')

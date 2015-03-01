@@ -266,17 +266,7 @@
 		( AT_COMMX_ROOM13 )
 	) 
 	(:functions (total-cost))
-	(:action NOOP_ROBOT
-		:parameters ()
-		:precondition
-		(and
-		)
-		:effect
-		(and
-			(increase (total-cost) 0.01)
-		)
-	)
-	(:action NOOP_COMMX
+	(:action NOOP
 		:parameters ()
 		:precondition
 		(and

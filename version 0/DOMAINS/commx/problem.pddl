@@ -3,13 +3,13 @@
 	(:domain grounded-ACTION)
 	(:init
 		(= (total-cost) 0)
-		( AT_MK2_ROOM3 )
-		( AT_MK1_ROOM8 )
-		( AT_ROBOT_ROOM4 )
+		( AT_MK2_ROOM4 )
+		( AT_MK1_ROOM2 )
+		( AT_COMMX_ROOM13 )
 	)
 	(:goal
 		(and 
-		( AT_ROBOT_ROOM4 )
+		( CONDUCTED_TRIAGE_COMMX_ROOM1 )
 		)
 	)
 	(:metric minimize (total-cost))

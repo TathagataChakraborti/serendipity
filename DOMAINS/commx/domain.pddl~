@@ -183,6 +183,7 @@
 		)
 		:effect
 		(and
+			(increase (total-cost) 0.01)
 		)
 	)
 	(:action MOVE_REVERSE_COMMX_HALL5_HALL4

@@ -59,7 +59,7 @@ def run_ip(domainFile, problemFile, T, discount):
     start = time.time()
     print 'Building model...'
     # Model #
-    m = Model("sanscomm")
+    m = Model("resourceplan")
     
     # Optimization criterion  #
     m.modelSense = GRB.MINIMIZE

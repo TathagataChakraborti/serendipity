@@ -176,14 +176,13 @@
 		( AT_COMMX_ROOM13 )
 	)
 	(:functions (total-cost))
-	(:action NOOP_COMMX
+	(:action NOOP
 		:parameters ()
 		:precondition
 		(and
 		)
 		:effect
 		(and
-			(increase (total-cost) 0.01)
 		)
 	)
 	(:action MOVE_REVERSE_COMMX_HALL5_HALL4

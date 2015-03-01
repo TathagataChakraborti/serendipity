@@ -155,7 +155,7 @@
 		( AT_MK2_ROOM4 )
 	) 
 	(:functions (total-cost))
-	(:action NOOP
+	(:action NOOP_ROBOT
 		:parameters ()
 		:precondition
 		(and
