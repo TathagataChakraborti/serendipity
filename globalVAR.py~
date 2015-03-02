@@ -1,9 +1,0 @@
-flagOPT                = True
-listOfPredicates_robot = []
-listOfPredicates_human = []
-listOfPredicates       = {}
-listOfActions          = {}
-initState	       = {}
-goalState	       = {}
-
-
