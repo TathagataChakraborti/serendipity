@@ -1,0 +1,10 @@
+(:action NOOP_
+	:parameters ()
+	:precondition
+	(and
+	)
+	:effect
+	(and
+		(increase (total-cost) 0.01)
+	)
+)
