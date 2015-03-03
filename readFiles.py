@@ -35,7 +35,7 @@ def read_input(domainFile, problemFile, flag, discount):
             line = f_domain.readline()
             line = f_domain.readline()
             cost = float(line.split('(increase (total-cost) ')[1].split(')')[0]) 
-            if 'ROBOT' in name:
+            if 'ROBOT' in name and 'COMMX' not in name:
                 cost = discount*cost
             line = f_domain.readline()
             add_effects = []
@@ -92,8 +92,6 @@ def read_input(domainFile, problemFile, flag, discount):
     globalVAR.listOfActions[flag]    = copy.deepcopy(operatorList)
     globalVAR.initState[flag]        = copy.deepcopy(initState)
     globalVAR.goalState[flag]        = copy.deepcopy(goalState)
-        
-if __name__ == '__main__':
-    read_sas_file('output.sas')
+       
 
 

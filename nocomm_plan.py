@@ -59,8 +59,10 @@ def print_plan(m, T):
 
 
 def objective_function(act, var, T, stops):
+    K = 1000
     expr = quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions['SUPER']) for t in range(1,T))
-    expr += 0.00001*(stops['begin'] + stops['end'])
+    #expr = -0.0001*stops['begin']
+    expr += K*(stops['end'] - stops['begin'])
     #expr = quicksum(quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions[a]) for a in agents) for t in range(1,T))
     return expr
 
@@ -102,16 +104,14 @@ def run_ip(T):
     # define constraints - initial state #
     for vv in globalVAR.listOfPredicates['SUPER']:
         m.addConstr(var[vv, 0] == globalVAR.initState['SUPER'][globalVAR.listOfPredicates['SUPER'].index(vv)])
-        #print var[vv, 0] == globalVAR.initState[a][globalVAR.listOfPredicates[a].index(vv)]
         #need to check for consistency - for now assumed consistent
 
     # define constraints - goal state #
     for vv in globalVAR.listOfPredicates['SUPER']:
         if globalVAR.goalState['SUPER'][globalVAR.listOfPredicates['SUPER'].index(vv)] != -1:
             m.addConstr(var[vv,T-1] == globalVAR.goalState['SUPER'][globalVAR.listOfPredicates['SUPER'].index(vv)])
-                    #print var[vv,T-1] == globalVAR.goalState[a][globalVAR.listOfPredicates[a].index(vv)]
-                    #need to check for consistency - for now assumed consistent
-
+            #need to check for consistency - for now assumed consistent
+                
     # define constraints - preconditions #
     for t in range(1,T):
         for action in globalVAR.listOfActions['SUPER']:
@@ -128,45 +128,50 @@ def run_ip(T):
                     tempList1.append(action[0])
                 if vv in action[3]:
                     tempList2.append(action[0])
-            #m.addConstr(var[vv,t] == quicksum(act[aa,t] for aa in tempList1) + (1-quicksum(act[aa,t] for aa in tempList1)-quicksum(act[aa,t] for aa in tempList2))*var[vv,t-1])
             m.addConstr(var[vv,t] <= quicksum(act[aa,t] for aa in tempList1) + (1-quicksum(act[aa,t] for aa in tempList1))*var[vv,t-1])
             m.addConstr(var[vv,t] <= 1-quicksum(act[aa,t] for aa in tempList2))
 
-    # interrupts #
-    for t in range(1,T):
-        m.addConstr(stops['begin'] >= t*quicksum(act[aa[0],t] for aa in act3))
+    # define interrupts #
+    act_commx = []
+    for action in globalVAR.listOfActions['SUPER']:
+        if 'COMMX' in action[0]:
+            act_commx.append(action)
+
+    TT = T-1
+    for action in act_commx:
+        m.addConstr(stops['begin'] <= TT*(1-(TT-1)*quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))/pow(TT,2)))    
     
-    m.addConstr(stops['end'] == stops['begin'] + 1)
+    m.addConstr(stops['end'] >= stops['begin'] + 1)
 
     for idx in range(len(current_plan)):
         tt = idx + 1
         action = current_plan[idx]
         m.addConstr(act[action,tt] >= (stops['begin']-tt)/T)
- 
-    for action in act2:
-        if 'NOOP' not in action[0]:
-            for t in range(1,T):
-                m.addConstr(act[action[0],t] <= 1+(stops['end']-t)/T)
 
-    for action in act3:
+    act_robot = []
+    for action in globalVAR.listOfActions['SUPER']:
+        if 'ROBOT' in action[0]:
+            act_robot.append(action)
+
+    for action in act_robot:
         for t in range(1,T):
-            m.addConstr(act[action[0],t] <= 1+(stops['end']-t)/T)
-
+            m.addConstr(act[action[0],t] <= 1+(stops['end']-1-t)/T)
+            
     # define constraints - no concurrency #
     act_robot = []
     act_commx = []
     act_joint = []
     for action in globalVAR.listOfActions['SUPER']:
-        if action in globalVAR.listOfAction['ROBOT']:
-            act_robot.append(action)
-        elif action in globalVAR.listOfAction['COMMX']:
-            act_commx.append(action)
-        else:
-            act_joint.append(action)
+        if True in [aa[0] in action for aa in globalVAR.listOfActions['ROBOT']]:
+            act_robot.append(action[0])
+        elif True in [aa[0] in action for aa in globalVAR.listOfActions['COMMX']]:
+            act_commx.append(action[0])
+        elif True not in [aa[0] in action for aa in globalVAR.listOfActions['ROBOT']] and True not in [aa[0] in action for aa in globalVAR.listOfActions['COMMX']]:
+            act_joint.append(action[0])
 
     for t in range(1,T):
-        m.addConstr(quicksum(act[action[0],t] for action in act_robot) + quicksum(act[action[0],t] for action in act_joint) == 1)
-        m.addConstr(quicksum(act[action[0],t] for action in act_commx) + quicksum(act[action[0],t] for action in act_joint) == 1)
+        m.addConstr(quicksum(act[action,t] for action in act_robot) + quicksum(act[action,t] for action in act_joint) <= 1)
+        m.addConstr(quicksum(act[action,t] for action in act_commx) + quicksum(act[action,t] for action in act_joint) <= 1)
 
     # set optimization objective function #
     m.setObjective(objective_function(act, var, T, stops))
@@ -191,9 +196,9 @@ def generate_indv_plan(domainFile, problemFile):
     global current_plan
     print "Generating individual human plan..."
     cmd = '~/Desktop/FAST-DOWNWARD/src/translate/translate.py ' + str(domainFile) + ' ' + str(problemFile) + '> stdout.txt'
-    os.system(cmd) 
+    os.system(cmd)
     cmd = '~/Desktop/FAST-DOWNWARD/src/preprocess/preprocess < output.sas > stdout.txt'
-    os.system(cmd) 
+    os.system(cmd)
     cmd = '~/Desktop/FAST-DOWNWARD/src/fast-downward.py output --search "astar(lmcut())" > stdout.txt'
     os.system(cmd) 
     planFile = 'sas_plan'

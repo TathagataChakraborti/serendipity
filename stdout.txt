@@ -16,25 +16,25 @@ Initializing landmark cut heuristic...
 f = 12 [1 evaluated, 0 expanded, t=0s, 3060 KB]
 Best heuristic value: 12 [g=0, 1 evaluated, 0 expanded, t=0s, 3060 KB]
 Best heuristic value: 11 [g=1, 2 evaluated, 1 expanded, t=0s, 3060 KB]
-f = 13 [4 evaluated, 2 expanded, t=0s, 3060 KB]
-Best heuristic value: 10 [g=3, 5 evaluated, 3 expanded, t=0s, 3060 KB]
+Best heuristic value: 10 [g=2, 3 evaluated, 2 expanded, t=0s, 3060 KB]
+f = 13 [6 evaluated, 3 expanded, t=0s, 3060 KB]
 Best heuristic value: 9 [g=4, 7 evaluated, 4 expanded, t=0s, 3060 KB]
 Best heuristic value: 8 [g=5, 8 evaluated, 5 expanded, t=0s, 3060 KB]
-Best heuristic value: 7 [g=6, 19 evaluated, 10 expanded, t=0s, 3060 KB]
-Best heuristic value: 6 [g=7, 22 evaluated, 11 expanded, t=0s, 3060 KB]
-Best heuristic value: 5 [g=8, 24 evaluated, 12 expanded, t=0s, 3060 KB]
-Best heuristic value: 4 [g=9, 28 evaluated, 13 expanded, t=0s, 3060 KB]
-Best heuristic value: 3 [g=10, 32 evaluated, 14 expanded, t=0s, 3060 KB]
-Best heuristic value: 2 [g=11, 34 evaluated, 15 expanded, t=0s, 3060 KB]
-Best heuristic value: 1 [g=12, 37 evaluated, 16 expanded, t=0s, 3060 KB]
-Best heuristic value: 0 [g=13, 42 evaluated, 17 expanded, t=0s, 3060 KB]
+Best heuristic value: 7 [g=6, 19 evaluated, 9 expanded, t=0s, 3060 KB]
+Best heuristic value: 6 [g=7, 21 evaluated, 10 expanded, t=0s, 3060 KB]
+Best heuristic value: 5 [g=8, 23 evaluated, 11 expanded, t=0s, 3060 KB]
+Best heuristic value: 4 [g=9, 27 evaluated, 12 expanded, t=0s, 3060 KB]
+Best heuristic value: 3 [g=10, 31 evaluated, 13 expanded, t=0s, 3060 KB]
+Best heuristic value: 2 [g=11, 33 evaluated, 14 expanded, t=0s, 3060 KB]
+Best heuristic value: 1 [g=12, 36 evaluated, 15 expanded, t=0s, 3060 KB]
+Best heuristic value: 0 [g=13, 41 evaluated, 16 expanded, t=0s, 3060 KB]
 Solution found!
 Actual search time: 0s [t=0s]
 move_commx_room13_hall8  (1)
-move_reverse_commx_hall8_room8  (1)
-pick_up_medkit_commx_mk1_room8  (1)
-move_commx_room8_hall8  (1)
 move_reverse_commx_hall8_hall7  (1)
+move_reverse_commx_hall7_room7  (1)
+pick_up_medkit_commx_mk1_room7  (1)
+move_commx_room7_hall7  (1)
 move_reverse_commx_hall7_hall6  (1)
 move_reverse_commx_hall6_hall5  (1)
 move_reverse_commx_hall5_hall4  (1)
@@ -46,17 +46,17 @@ conduct_triage_commx_room1  (1)
 Plan length: 13 step(s).
 Plan cost: 13
 Initial state h value: 12.
-Expanded 18 state(s).
+Expanded 17 state(s).
 Reopened 0 state(s).
-Evaluated 42 state(s).
-Evaluations: 42
-Generated 57 state(s).
+Evaluated 41 state(s).
+Evaluations: 41
+Generated 55 state(s).
 Dead ends: 0 state(s).
-Expanded until last jump: 2 state(s).
+Expanded until last jump: 3 state(s).
 Reopened until last jump: 0 state(s).
-Evaluated until last jump: 4 state(s).
-Generated until last jump: 4 state(s).
-Number of registered states: 42
+Evaluated until last jump: 6 state(s).
+Generated until last jump: 7 state(s).
+Number of registered states: 41
 Search time: 0s
 Total time: 0s
 Solution found.

@@ -4,12 +4,12 @@
 	(:init
 		(= (total-cost) 0)
 		( AT_MK1_ROOM13 )
-		( AT_MK2_ROOM5 )
-		( AT_COMMX_ROOM1 )
+		( AT_MK2_ROOM7 )
+		( AT_COMMX_ROOM7 )
 	)
 	(:goal
 		(and 
-		CONDUCTED_TRIAGE_COMMX_ROOM10 )
+		( CONDUCTED_TRIAGE_COMMX_ROOM12 )
 		)
 	)
 	(:metric minimize (total-cost))

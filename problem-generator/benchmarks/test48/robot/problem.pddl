@@ -4,8 +4,8 @@
 	(:init
 		(= (total-cost) 0)
 		( AT_MK1_ROOM13 )
-		( AT_MK2_ROOM12 )
-		( AT_ROBOT_HALL7 )
+		( AT_MK2_ROOM10 )
+		( AT_ROBOT_HALL5 )
 	)
 	(:goal
 		(and 

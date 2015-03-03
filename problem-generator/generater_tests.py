@@ -99,7 +99,7 @@ def generate_problems():
         os.system(cmd)
         cmd = 'cp -r ' + dom_dir + '/* ' + suite_dir + folderName 
         os.system(cmd)
-        goal = '\t\tCONDUCTED_TRIAGE_COMMX_' + random.choice(rooms).upper() + ' )\n' 
+        goal = '\t\t( CONDUCTED_TRIAGE_COMMX_' + random.choice(rooms).upper() + ' )\n' 
         mk1_pos = '\t\t( AT_MK1_' + random.choice(rooms).upper() + ' )\n'
         mk2_pos = '\t\t( AT_MK2_' + random.choice(rooms).upper() + ' )\n'
         commx_pos = '\t\t( AT_COMMX_' + random.choice(locs).upper() + ' )\n'

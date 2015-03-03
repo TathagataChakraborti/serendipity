@@ -227,7 +227,7 @@
 		)
 		:effect
 		(and
-			(increase (total-cost) 0.01)
+			(increase (total-cost) 0)
 		)
 	)
 	(:action NOOP_ROBOT
@@ -237,7 +237,7 @@
 		)
 		:effect
 		(and
-			(increase (total-cost) 0.01)
+			(increase (total-cost) 0)
 		)
 	)
 	(:action PICK_UP_MEDKIT_COMMX_MK2_HALL8

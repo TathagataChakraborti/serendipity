@@ -140,7 +140,7 @@
 		)
 		:effect
 		(and
-			(increase (total-cost) 0.01)
+			(increase (total-cost) 0)
 		)
 	)
 	(:action PICK_UP_MEDKIT_ROBOT_MK2_HALL8

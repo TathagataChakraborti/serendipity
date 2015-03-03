@@ -3,9 +3,9 @@
 	(:domain grounded-ACTION)
 	(:init
 		(= (total-cost) 0)
-		( AT_MK1_ROOM9 )
-		( AT_MK2_ROOM10 )
-		( AT_ROBOT_ROOM7 )
+		( AT_MK1_ROOM7 )
+		( AT_MK2_ROOM9 )
+		( AT_ROBOT_HALL4 )
 	)
 	(:goal
 		(and 
