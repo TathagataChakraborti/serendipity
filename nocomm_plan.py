@@ -60,7 +60,7 @@ def print_plan(m, T):
 
 def objective_function(act, var, T, stops):
     expr = quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions['SUPER']) for t in range(1,T))
-    expr += 0.000000001*(stops['begin'] + stops['end'])
+    expr += 0.00001*(stops['begin'] + stops['end'])
     #expr = quicksum(quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions[a]) for a in agents) for t in range(1,T))
     return expr
 
@@ -92,8 +92,8 @@ def run_ip(T):
             act[action[0], t] = m.addVar(vtype=GRB.BINARY, name=str(action[0]) + '_%s' % (str(t)))
 
     stops = {}
-    stops['begin'] = m.addVar(vtype=GRB.INTEGER, lb=1, ub=T, name='begin')
-    stops['end']   = m.addVar(vtype=GRB.INTEGER, lb=1, ub=T, name='end')
+    stops['begin'] = m.addVar(vtype=GRB.INTEGER, lb=0, ub=T, name='begin')
+    stops['end']   = m.addVar(vtype=GRB.INTEGER, lb=0, ub=T, name='end')
     
     # Update model with variables #
     m.update()
@@ -133,37 +133,40 @@ def run_ip(T):
             m.addConstr(var[vv,t] <= 1-quicksum(act[aa,t] for aa in tempList2))
 
     # interrupts #
-    act1 = []
-    act2 = []
-    act3 = []
-    for aa in globalVAR.listOfActions['SUPER']:
-        if 'COMMX' in aa[0] and 'ROBOT' not in aa[0]:
-            act1.append(aa)
-        elif 'COMMX' not in aa[0] and 'ROBOT' in aa[0]:
-            act2.append(aa)
-        else:
-            act3.append(aa)
-     
     for t in range(1,T):
         m.addConstr(stops['begin'] >= t*quicksum(act[aa[0],t] for aa in act3))
-        #print stops['begin'] >= t*quicksum(act[aa[0],t] for aa in act3 )
     
     m.addConstr(stops['end'] == stops['begin'] + 1)
 
     for idx in range(len(current_plan)):
         tt = idx + 1
         action = current_plan[idx]
-        #m.addConstr(act[action,tt] >= (stops['begin']-tt)/T)
-        #print act[action,tt] >= (stops['begin']-tt)/tt
+        m.addConstr(act[action,tt] >= (stops['begin']-tt)/T)
+ 
+    for action in act2:
+        if 'NOOP' not in action[0]:
+            for t in range(1,T):
+                m.addConstr(act[action[0],t] <= 1+(stops['end']-t)/T)
 
     for action in act3:
         for t in range(1,T):
-            m.addConstr(act[action[0],t] <= stops['end']-t)
+            m.addConstr(act[action[0],t] <= 1+(stops['end']-t)/T)
 
     # define constraints - no concurrency #
+    act_robot = []
+    act_commx = []
+    act_joint = []
+    for action in globalVAR.listOfActions['SUPER']:
+        if action in globalVAR.listOfAction['ROBOT']:
+            act_robot.append(action)
+        elif action in globalVAR.listOfAction['COMMX']:
+            act_commx.append(action)
+        else:
+            act_joint.append(action)
+
     for t in range(1,T):
-        m.addConstr(quicksum(act[aa[0],t] for aa in act1) + quicksum(act[aa[0],t] for aa in act3) == 1)
-        m.addConstr(quicksum(act[aa[0],t] for aa in act2) + quicksum(act[aa[0],t] for aa in act3) == 1)
+        m.addConstr(quicksum(act[action[0],t] for action in act_robot) + quicksum(act[action[0],t] for action in act_joint) == 1)
+        m.addConstr(quicksum(act[action[0],t] for action in act_commx) + quicksum(act[action[0],t] for action in act_joint) == 1)
 
     # set optimization objective function #
     m.setObjective(objective_function(act, var, T, stops))
@@ -204,7 +207,6 @@ def generate_indv_plan(domainFile, problemFile):
     for action in current_plan:
         print action
 
-
 if __name__ == '__main__':
 
     domainFile = 'DOMAINS/commx/domain_o.pddl'
@@ -226,8 +228,7 @@ if __name__ == '__main__':
     domainFile = 'DOMAINS/superagent/domain.pddl'
     problemFile = 'DOMAINS/superagent/problem.pddl'
     readFiles.read_input(domainFile, problemFile, 'SUPER', discount) 
-    #globalVAR.listOfPredicates['SUPER'] = list(set(globalVAR.listOfPredicates['ROBOT']) | set(globalVAR.listOfPredicates['COMMX']))
-    
+        
     # run IP #
     T = len(current_plan)+1
     run_ip(T)
