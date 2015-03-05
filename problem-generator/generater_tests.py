@@ -8,7 +8,7 @@ agents    = ['commx', 'robot', 'superagent']
 curr_dir  = 'iros/'
 dom_dir   = 'DOMAINS/'
 suite_dir = 'benchmarks/'
-num_tests = 100
+num_tests = 200
 
 def groundfilesday():
     for agent in agents:

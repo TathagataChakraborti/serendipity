@@ -40,7 +40,6 @@ def print_plan(m, T):
     print "\n*** FINAL PLAN  ***"
     cost = 0
     for t in range(1,T):
-        print
         for v in solnList:
             for a in agents:
                 actName = v.VarName.split('_'+str(t))[0]
@@ -51,19 +50,17 @@ def print_plan(m, T):
 
     for v in solnList:
         if v.VarName == 'begin':
-            print "Begin ", v.X
+            xx = v.X
         if v.VarName == 'end':
-            print "End ", v.X
+            yy = v.X
 
-    return cost
+    return (yy - xx)
 
 
 def objective_function(act, var, T, stops):
     K = 1000
     expr = quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions['SUPER']) for t in range(1,T))
-    #expr = -0.0001*stops['begin']
     expr += K*(stops['end'] - stops['begin'])
-    #expr = quicksum(quicksum(quicksum(aa[4]*act[aa[0],t] for aa in globalVAR.listOfActions[a]) for a in agents) for t in range(1,T))
     return expr
 
 
@@ -72,7 +69,6 @@ def run_ip(T):
     #print_actions()
     #print_predicates()
 
-    start = time.time()
     print 'Building model...'
     # Model #
     m = Model("nocomm")
@@ -137,7 +133,7 @@ def run_ip(T):
         if 'COMMX' in action[0]:
             act_commx.append(action)
 
-    TT = T-1
+    TT = float(T)-1
     for action in act_commx:
         m.addConstr(stops['begin'] <= TT*(1-(TT-1)*quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))/pow(TT,2)))    
     
@@ -180,20 +176,18 @@ def run_ip(T):
     print "Optimizing..."
     m.params.OutputFlag = 0
     m.optimize()
-    end = time.time()
     
     # print solution #
     status = m.status
     if status == GRB.OPTIMAL:
         ret = print_plan(m, T)
-        print 'Time: ', (end-start), 'Cost: ', ret
-        print('Obj: %g' % m.ObjVal)
+        return m.ObjVal - 1000*ret
     else:
-        print 'Optimization was stopped with status %d' %status
-    
+        return 0
 
 def generate_indv_plan(domainFile, problemFile):
     global current_plan
+    current_plan = []
     print "Generating individual human plan..."
     cmd = '~/Desktop/FAST-DOWNWARD/src/translate/translate.py ' + str(domainFile) + ' ' + str(problemFile) + '> stdout.txt'
     os.system(cmd)
@@ -208,34 +202,28 @@ def generate_indv_plan(domainFile, problemFile):
         if 'cost' in line:
             break
         current_plan.append(line[line.find('(')+1:line.find(')')].strip().replace(' ','_').upper())
-    
+
     for action in current_plan:
         print action
 
 if __name__ == '__main__':
 
+    discount = 0.1
+    start = time.time()
     domainFile = 'DOMAINS/commx/domain_o.pddl'
     problemFile = 'DOMAINS/commx/problem.pddl'
     generate_indv_plan(domainFile, problemFile)
-
-    print '\nReading domain and problem files...'
-    discount = 1.0
     domainFile = 'DOMAINS/commx/domain.pddl'
     problemFile = 'DOMAINS/commx/problem.pddl'
-    readFiles.read_input(domainFile, problemFile, 'COMMX', discount) 
-    
-    discount = 1.0
+    readFiles.read_input(domainFile, problemFile, 'COMMX') 
     domainFile = 'DOMAINS/robot/domain.pddl'
     problemFile = 'DOMAINS/robot/problem.pddl'
-    readFiles.read_input(domainFile, problemFile, 'ROBOT', discount) 
-
-    discount = 0.1
+    readFiles.read_input(domainFile, problemFile, 'ROBOT') 
     domainFile = 'DOMAINS/superagent/domain.pddl'
     problemFile = 'DOMAINS/superagent/problem.pddl'
     readFiles.read_input(domainFile, problemFile, 'SUPER', discount) 
-        
-    # run IP #
     T = len(current_plan)+1
-    run_ip(T)
-
-
+    cost = run_ip(T)
+    end = time.time()
+    output = 'discount ' + str(discount) + ' :: Time: ' + str(end-start) + ' Cost: ' + str(cost)
+    print output
