@@ -7,37 +7,11 @@ import time
 current_plan = []
 agents       = ['COMMX', 'ROBOT', 'SUPER']
 
-def print_actions():
-    
-    for a in agents:
-        print "\n*** ACTION DESCRIPTIONS for ", a, " ***"
-        for action in globalVAR.listOfActions[a]:
-            print "\nAction Name: " + action[0]
-            print "preconditions: " + str(action[1])
-            print "add effects: " + str(action[2])
-            print "delete effects: " + str(action[3])
-            print "cost: " + str(action[4]) + '\n'
-
-def print_predicates():
-    print "*** DOMAIN PREDICATES ***\n"
-    for predicate in globalVAR.listOfPredicates['SUPER']:
-        print predicate
-
-    for a in agents:
-        print
-        print "*** GOAL STATE for ", a, " ***\n"
-        print globalVAR.goalState[a]
-        print
-        print "*** INITIAL STATE for ", a, " ***\n"
-        print globalVAR.initState[a]
-        print
-
-
 def print_plan(m, T):
 
     actList = [aa[0] for aa in globalVAR.listOfActions['SUPER']]
     solnList = m.getVars()
-    print "\n*** FINAL PLAN  ***"
+    print "*** SUPER PLAN  ***"
     cost = 0
     for t in range(1,T):
         for v in solnList:
@@ -48,6 +22,7 @@ def print_plan(m, T):
                     if 'NOOP' not in v.VarName:
                         cost += 1
 
+    solnList = m.getVars()
     for v in solnList:
         if v.VarName == 'begin':
             xx = v.X
@@ -66,17 +41,12 @@ def objective_function(act, var, T, stops):
 
 def run_ip(T):
 
-    #print_actions()
-    #print_predicates()
-
-    print 'Building model...'
     # Model #
-    m = Model("nocomm")
+    m = Model("comm")
     
     # Optimization criterion  #
     m.modelSense = GRB.MINIMIZE
 
-    print 'Adding variables...'
     # define variables - y_a_t  #
     var = {}
     for vv in globalVAR.listOfPredicates['SUPER']:
@@ -96,7 +66,6 @@ def run_ip(T):
     # Update model with variables #
     m.update()
     
-    print 'Adding constraints...'
     # define constraints - initial state #
     for vv in globalVAR.listOfPredicates['SUPER']:
         m.addConstr(var[vv, 0] == globalVAR.initState['SUPER'][globalVAR.listOfPredicates['SUPER'].index(vv)])
@@ -124,7 +93,7 @@ def run_ip(T):
                     tempList1.append(action[0])
                 if vv in action[3]:
                     tempList2.append(action[0])
-            m.addConstr(var[vv,t] <= quicksum(act[aa,t] for aa in tempList1) + (1-quicksum(act[aa,t] for aa in tempList1))*var[vv,t-1])
+            m.addConstr(var[vv,t] <= quicksum(act[aa,t] for aa in tempList1) + var[vv,t-1])
             m.addConstr(var[vv,t] <= 1-quicksum(act[aa,t] for aa in tempList2))
 
     # define interrupts #
@@ -133,16 +102,17 @@ def run_ip(T):
         if 'COMMX' in action[0]:
             act_commx.append(action)
 
-    TT = float(T)-1
-    for action in act_commx:
-        m.addConstr(stops['begin'] <= TT*(1-(TT-1)*quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))/pow(TT,2)))    
-    
-    m.addConstr(stops['end'] >= stops['begin'] + 1)
+#    for action in act_commx:
+#        m.addConstr(stops['begin'] <= quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))
+#                    + T*(1-quicksum(act[action[0],t] for t in range(1,T)))
+#                    + T*sum([int(aa == action[0]) for aa in current_plan]))
 
-    for idx in range(len(current_plan)):
-        tt = idx + 1
-        action = current_plan[idx]
-        m.addConstr(act[action,tt] >= (stops['begin']-tt)/T)
+#    for action in act_commx:
+#        if action[0] not in current_plan:
+#            for t in range(1,T):
+#                m.addConstr(act[action,tt] <= 1+(tt-stops['begin'])/T)
+
+    m.addConstr(stops['end'] >= stops['begin'] + 1)
 
     act_robot = []
     for action in globalVAR.listOfActions['SUPER']:
@@ -173,7 +143,6 @@ def run_ip(T):
     m.setObjective(objective_function(act, var, T, stops))
 
     # optimize #
-    print "Optimizing..."
     m.params.OutputFlag = 0
     m.optimize()
     
@@ -188,7 +157,6 @@ def run_ip(T):
 def generate_indv_plan(domainFile, problemFile):
     global current_plan
     current_plan = []
-    print "Generating individual human plan..."
     cmd = '~/Desktop/FAST-DOWNWARD/src/translate/translate.py ' + str(domainFile) + ' ' + str(problemFile) + '> stdout.txt'
     os.system(cmd)
     cmd = '~/Desktop/FAST-DOWNWARD/src/preprocess/preprocess < output.sas > stdout.txt'
@@ -203,27 +171,41 @@ def generate_indv_plan(domainFile, problemFile):
             break
         current_plan.append(line[line.find('(')+1:line.find(')')].strip().replace(' ','_').upper())
 
+    print '*** CommX Plan ***'
     for action in current_plan:
         print action
+
 
 if __name__ == '__main__':
 
     discount = 0.1
     start = time.time()
-    domainFile = 'DOMAINS/commx/domain_o.pddl'
-    problemFile = 'DOMAINS/commx/problem.pddl'
+
+    domainFile = 'test/commx/domain.pddl'
+    problemFile = 'test/commx/problem.pddl'
     generate_indv_plan(domainFile, problemFile)
-    domainFile = 'DOMAINS/commx/domain.pddl'
-    problemFile = 'DOMAINS/commx/problem.pddl'
     readFiles.read_input(domainFile, problemFile, 'COMMX') 
-    domainFile = 'DOMAINS/robot/domain.pddl'
-    problemFile = 'DOMAINS/robot/problem.pddl'
+
+    domainFile = 'test/robot/domain.pddl'
+    problemFile = 'test/robot/problem.pddl'
     readFiles.read_input(domainFile, problemFile, 'ROBOT') 
-    domainFile = 'DOMAINS/superagent/domain.pddl'
-    problemFile = 'DOMAINS/superagent/problem.pddl'
+
+    domainFile = 'test/superagent/domain.pddl'
+    problemFile = 'test/superagent/problem.pddl'
     readFiles.read_input(domainFile, problemFile, 'SUPER', discount) 
-    T = len(current_plan)+1
+
+    T = len(current_plan) + 1
     cost = run_ip(T)
     end = time.time()
-    output = 'discount ' + str(discount) + ' :: Time: ' + str(end-start) + ' Cost: ' + str(cost)
+    output = 'discount ' + str(discount) + '- Time: ' + str(end-start) + ' Cost: ' + str(cost)
     print output
+    sys.exit(0)
+    try:
+        cost = run_ip(T)
+        end = time.time()
+        output = 'discount ' + str(discount) + '- Time: ' + str(end-start) + ' Cost: ' + str(cost)
+        print output
+    except: 
+        raise Exception("Oops! Something went wrong.")
+                
+        

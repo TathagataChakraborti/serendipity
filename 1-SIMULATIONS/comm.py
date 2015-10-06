@@ -80,7 +80,7 @@ def run_ip(T):
                     tempList1.append(action[0])
                 if vv in action[3]:
                     tempList2.append(action[0])
-            m.addConstr(var[vv,t] <= quicksum(act[aa,t] for aa in tempList1) + (1-quicksum(act[aa,t] for aa in tempList1))*var[vv,t-1])
+            m.addConstr(var[vv,t] <= quicksum(act[aa,t] for aa in tempList1) + var[vv,t-1])
             m.addConstr(var[vv,t] <= 1-quicksum(act[aa,t] for aa in tempList2))
 
     # define interrupts #
@@ -89,10 +89,16 @@ def run_ip(T):
         if 'COMMX' in action[0]:
             act_commx.append(action)
 
-    TT = float(T)-1
-    for action in act_commx:
-        m.addConstr(stops['begin'] <= TT*(1-(TT-1)*quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))/pow(TT,2)))    
-    
+#    for action in act_commx:
+#        m.addConstr(stops['begin'] <= quicksum(t*act[action[0],t] for t in range(1,T))*(1-sum([int(aa == action[0]) for aa in current_plan]))
+#                    + T*(1-quicksum(act[action[0],t] for t in range(1,T)))
+#                    + T*sum([int(aa == action[0]) for aa in current_plan]))
+
+#    for action in act_commx:
+#        if action[0] not in current_plan:
+#            for t in range(1,T):
+#                m.addConstr(act[action,tt] <= 1+(tt-stops['begin'])/T)
+
     m.addConstr(stops['end'] >= stops['begin'] + 1)
 
     act_robot = []
@@ -159,7 +165,7 @@ if __name__ == '__main__':
     for d in dd:
         discount = float(d)
         discount = 1-discount/100
-        num_tests = 100
+        num_tests = 200
         output_file = open('results3_'+str(d)+'.dat','w')
         output_file.close()
         output_file = open('results3_'+str(d)+'.dat','a')

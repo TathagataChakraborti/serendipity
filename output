@@ -468,14 +468,44 @@ Atom has_medkit_commx()
 NegatedAtom has_medkit_commx()
 end_variable
 begin_variable
-var71
+var75
 -1
 2
-Atom conducted_triage_commx_room1()
-NegatedAtom conducted_triage_commx_room1()
+Atom conducted_triage_commx_room13()
+NegatedAtom conducted_triage_commx_room13()
 end_variable
 0
 begin_state
+1
+1
+1
+1
+1
+1
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
 0
 1
 1
@@ -505,37 +535,7 @@ begin_state
 1
 1
 1
-1
-1
-1
-1
-1
-1
 0
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-1
-0
-1
-1
-1
 1
 1
 1
@@ -550,9 +550,9 @@ begin_goal
 end_goal
 125
 begin_operator
-conduct_triage_commx_room1 
+conduct_triage_commx_room13 
 2
-8 0
+0 0
 65 0
 1
 0 66 -1 0
@@ -1996,11 +1996,6 @@ check 0
 check 1
 30
 check 0
-switch 65
-check 0
-check 1
-0
-check 0
 check 0
 check 0
 switch 9
@@ -2116,6 +2111,11 @@ switch 42
 check 0
 check 1
 34
+check 0
+switch 65
+check 0
+check 1
+0
 check 0
 check 0
 check 0
@@ -4024,14 +4024,15 @@ begin_DTG
 0
 0
 2
-8 0
+0 0
 65 0
 end_DTG
 begin_CG
-6
+7
 11 1
 43 2
 21 2
+66 1
 64 2
 42 2
 65 4
@@ -4084,11 +4085,10 @@ begin_CG
 64 2
 42 2
 65 4
-7
+6
 14 1
 52 2
 30 2
-66 1
 64 2
 42 2
 65 4

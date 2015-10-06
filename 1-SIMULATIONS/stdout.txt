@@ -13,46 +13,50 @@ Bytes per state: 12
 done initalizing global data [t=0s]
 Conducting best first search with reopening closed nodes, (real) bound = 2147483647
 Initializing landmark cut heuristic...
-f = 8 [1 evaluated, 0 expanded, t=0s, 3060 KB]
-Best heuristic value: 8 [g=0, 1 evaluated, 0 expanded, t=0s, 3060 KB]
-Best heuristic value: 7 [g=1, 2 evaluated, 1 expanded, t=0s, 3060 KB]
-Best heuristic value: 6 [g=2, 3 evaluated, 2 expanded, t=0s, 3060 KB]
-f = 9 [6 evaluated, 3 expanded, t=0s, 3060 KB]
-f = 10 [8 evaluated, 5 expanded, t=0s, 3060 KB]
-f = 11 [11 evaluated, 7 expanded, t=0s, 3060 KB]
-Best heuristic value: 5 [g=6, 12 evaluated, 8 expanded, t=0s, 3060 KB]
-Best heuristic value: 4 [g=7, 13 evaluated, 9 expanded, t=0s, 3060 KB]
-Best heuristic value: 3 [g=8, 14 evaluated, 10 expanded, t=0s, 3060 KB]
-Best heuristic value: 2 [g=9, 18 evaluated, 11 expanded, t=0s, 3060 KB]
-Best heuristic value: 1 [g=10, 21 evaluated, 12 expanded, t=0s, 3060 KB]
-Best heuristic value: 0 [g=11, 25 evaluated, 13 expanded, t=0s, 3060 KB]
+f = 10 [1 evaluated, 0 expanded, t=0s, 3060 KB]
+Best heuristic value: 10 [g=0, 1 evaluated, 0 expanded, t=0s, 3060 KB]
+f = 11 [3 evaluated, 1 expanded, t=0s, 3060 KB]
+f = 12 [8 evaluated, 3 expanded, t=0s, 3060 KB]
+f = 13 [14 evaluated, 5 expanded, t=0s, 3060 KB]
+Best heuristic value: 9 [g=4, 16 evaluated, 7 expanded, t=0s, 3060 KB]
+Best heuristic value: 8 [g=5, 17 evaluated, 8 expanded, t=0s, 3060 KB]
+Best heuristic value: 7 [g=6, 18 evaluated, 9 expanded, t=0s, 3060 KB]
+Best heuristic value: 6 [g=7, 22 evaluated, 10 expanded, t=0s, 3060 KB]
+Best heuristic value: 5 [g=8, 25 evaluated, 11 expanded, t=0s, 3060 KB]
+Best heuristic value: 4 [g=9, 27 evaluated, 12 expanded, t=0s, 3060 KB]
+Best heuristic value: 3 [g=10, 31 evaluated, 13 expanded, t=0s, 3060 KB]
+Best heuristic value: 2 [g=11, 35 evaluated, 14 expanded, t=0s, 3060 KB]
+Best heuristic value: 1 [g=12, 38 evaluated, 15 expanded, t=0s, 3060 KB]
+Best heuristic value: 0 [g=13, 42 evaluated, 16 expanded, t=0s, 3060 KB]
 Solution found!
 Actual search time: 0s [t=0s]
-move_commx_room13_hall8  (1)
-move_reverse_commx_hall8_hall7  (1)
-move_reverse_commx_hall7_hall6  (1)
-move_reverse_commx_hall6_hall5  (1)
-move_reverse_commx_hall5_room12  (1)
-pick_up_medkit_commx_mk1_room12  (1)
-move_commx_room12_hall5  (1)
+move_reverse_commx_hall3_hall2  (1)
+move_reverse_commx_hall2_hall1  (1)
+move_reverse_commx_hall1_room1  (1)
+pick_up_medkit_commx_mk1_room1  (1)
+move_commx_room1_hall1  (1)
+move_commx_hall1_hall2  (1)
+move_commx_hall2_hall3  (1)
+move_commx_hall3_hall4  (1)
+move_commx_hall4_hall5  (1)
 move_commx_hall5_hall6  (1)
 move_commx_hall6_hall7  (1)
 move_reverse_commx_hall7_room7  (1)
 conduct_triage_commx_room7  (1)
-Plan length: 11 step(s).
-Plan cost: 11
-Initial state h value: 8.
-Expanded 14 state(s).
+Plan length: 13 step(s).
+Plan cost: 13
+Initial state h value: 10.
+Expanded 17 state(s).
 Reopened 0 state(s).
-Evaluated 25 state(s).
-Evaluations: 25
-Generated 36 state(s).
+Evaluated 42 state(s).
+Evaluations: 42
+Generated 56 state(s).
 Dead ends: 0 state(s).
-Expanded until last jump: 7 state(s).
+Expanded until last jump: 5 state(s).
 Reopened until last jump: 0 state(s).
-Evaluated until last jump: 11 state(s).
-Generated until last jump: 16 state(s).
-Number of registered states: 25
+Evaluated until last jump: 14 state(s).
+Generated until last jump: 17 state(s).
+Number of registered states: 42
 Search time: 0s
 Total time: 0s
 Solution found.
